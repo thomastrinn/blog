@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Blog</title>
-    <link>http://example.org/</link>
+    <link>https://thomastrinn.github.io/blog/</link>
     <description>Recent content on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Aug 2021 14:27:25 +0200</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Aug 2021 14:27:25 +0200</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux Systemd Journal</title>
-      <link>http://example.org/posts/linux-systemd-journal/</link>
+      <link>https://thomastrinn.github.io/blog/posts/linux-systemd-journal/</link>
       <pubDate>Tue, 03 Aug 2021 14:27:25 +0200</pubDate>
       
-      <guid>http://example.org/posts/linux-systemd-journal/</guid>
+      <guid>https://thomastrinn.github.io/blog/posts/linux-systemd-journal/</guid>
       <description>Journal mérete A journal a /var/log/journal/ könyvtárba hozza létre a log fájlokat, amik idővel sok helyet foglalhatnak. Ennek határt szabhatunk.
 A /etc/systemd/journald.conf fájlban a SystemMaxUse változónak értéket adhatunk:
 SystemMaxUse=50M A config fájl módosítását követően a journal service-t újra kell indítanunk, hogy a változtatások érvényesüljenek:
