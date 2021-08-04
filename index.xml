@@ -32,5 +32,6 @@ systemctl restart systemd-journald Hibák megtekintése Az alábbi paranccsal a 
 journalctl -r -p 3 További részletek: arch wiki journal</description>
     </item>
     
+    
   </channel>
 </rss>
