@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Aug 2021 14:27:25 +0200</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Aug 2021 08:04:34 +0200</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PostgreSQL in Docker</title>
+      <link>https://thomastrinn.github.io/blog/posts/postgresql-in-docker/</link>
+      <pubDate>Wed, 04 Aug 2021 08:04:34 +0200</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/postgresql-in-docker/</guid>
+      <description>PostgreSQL server könnyen indítható docker container segítségével. A container létrehozását docker-compose segítségével végzem.
+PostgreSQL docker-compose service Ahhoz, hogy docker-compose segítségével hozzunk létre a postgresql docker containert két fájlra lesz szükségünk. Az egyik a .env fájl a másik a docker-compose.yml.
+A .env fájl nem kötelező, de praktikus, itt környezeti változókat definiálhatunk, amelyeket a docker-compose.yml fájlban fel tudunk használni.
+A docker-compose.yml fájlban definiáljuk a service-ket a volumes-eket. Jelen esetben csak egy service-t definiálunk, a postgresql-t.</description>
+    </item>
+    
     <item>
       <title>Linux Systemd Journal</title>
       <link>https://thomastrinn.github.io/blog/posts/linux-systemd-journal/</link>
