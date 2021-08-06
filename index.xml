@@ -6,7 +6,18 @@
     <description>Recent content on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Aug 2021 08:04:34 +0200</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Aug 2021 07:54:46 +0200</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SonarQube in Docker</title>
+      <link>https://thomastrinn.github.io/blog/posts/sonarqube-in-docker/</link>
+      <pubDate>Fri, 06 Aug 2021 07:54:46 +0200</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/sonarqube-in-docker/</guid>
+      <description>A SonarQube egy kód minőség elemző eszköz.
+SonarQube futtatása docker-compose service-ként docker-compose.yml:
+version: &amp;#34;3&amp;#34; services: sonarqube: image: sonarqube:8.9-community container_name: sonarqube depends_on: - db ulimits: memlock: soft: -1 hard: -1 nofile: soft: 65536 hard: 65536 environment: SONAR_JDBC_URL: jdbc:postgresql://db:5432/sonar SONAR_JDBC_USERNAME: sonar SONAR_JDBC_PASSWORD: sonar volumes: - sonarqube_data:/opt/sonarqube/data - sonarqube_extensions:/opt/sonarqube/extensions - sonarqube_logs:/opt/sonarqube/logs ports: - &amp;#34;9010:9000&amp;#34; db: image: postgres:12 container_name: sonarqube-postgres environment: POSTGRES_USER: sonar POSTGRES_PASSWORD: sonar ports: - 14432:5432 volumes: - postgresql:/var/lib/postgresql - postgresql_data:/var/lib/postgresql/data volumes: sonarqube_data: sonarqube_extensions: sonarqube_logs: postgresql: postgresql_data: SonarQube indítása: docker-compose up -d</description>
+    </item>
+    
     <item>
       <title>PostgreSQL in Docker</title>
       <link>https://thomastrinn.github.io/blog/posts/postgresql-in-docker/</link>
