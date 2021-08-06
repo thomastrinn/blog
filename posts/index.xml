@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Aug 2021 07:54:46 +0200</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Aug 2021 08:09:59 +0200</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Elasticsearch in Docker</title>
+      <link>https://thomastrinn.github.io/blog/posts/elasticsearch-in-docker/</link>
+      <pubDate>Fri, 06 Aug 2021 08:09:59 +0200</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/elasticsearch-in-docker/</guid>
+      <description>Az alábbi docker-compose.yml fájl egy elasticsearch és egy elastickibana service-t indít el.
+version: &amp;#39;3&amp;#39; services: elasticsearch: image: docker.elastic.co/elasticsearch/elasticsearch:7.9.3 container_name: ebla_elasticsearch environment: - xpack.security.enabled=false - discovery.type=single-node ulimits: memlock: soft: -1 hard: -1 nofile: soft: 65536 hard: 65536 cap_add: - IPC_LOCK volumes: - elasticsearch_data:/usr/share/elasticsearch/data ports: - 9200:9200 - 9300:9300 kibana: image: docker.elastic.co/kibana/kibana:7.9.3 container_name: ebla_kibana environment: - ELASTICSEARCH_HOSTS=http://elasticsearch:9200 ports: - 5601:5601 depends_on: - elasticsearch volumes: elasticsearch_data: driver: local Ezen beállítások development környezetre ajánlatosak, production esetén ez kerülendő.</description>
+    </item>
+    
     <item>
       <title>SonarQube in Docker</title>
       <link>https://thomastrinn.github.io/blog/posts/sonarqube-in-docker/</link>
