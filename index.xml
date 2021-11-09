@@ -6,7 +6,18 @@
     <description>Recent content on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Aug 2021 08:23:05 +0200</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Nov 2021 20:08:03 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raspberry Pi 3 - Part 1: Setup</title>
+      <link>https://thomastrinn.github.io/blog/posts/pi3-server-part-01-setup/</link>
+      <pubDate>Tue, 09 Nov 2021 20:08:03 +0100</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/pi3-server-part-01-setup/</guid>
+      <description>Az OS telepítése A célom hogy headless módon használhassam a pi-t, így nincs szükségem desktop enviromentre. Követve a hivatalos getting started leírást, az OS-t a Raspberry Pi Imager segítségével telepítem.
+Miután az SD kártyát a számítógépemhez csatlakoztattam az RP Imager-ben OS-ként nem a default beállítást választottam, hanem az other opció alatt elérhető DE nélküli változatot (ebből két verzió létezik: Lite és Full, az utóbbit választottam).
+Az Advenced Options segítségével be tudtam állítani a wifi-t, a locale beállításokat és az ssh-t.</description>
+    </item>
+    
     <item>
       <title>Get Started With Docker Compose</title>
       <link>https://thomastrinn.github.io/blog/posts/get-started-with-docker-compose/</link>

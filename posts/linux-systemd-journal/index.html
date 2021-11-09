@@ -21,7 +21,7 @@ journalctl -r -p 3 További részletek: arch wiki journal">
 <link rel=mask-icon href=https://thomastrinn.github.io/blog/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.86.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta property="og:title" content="Linux Systemd Journal">
 <meta property="og:description" content="Journal mérete A journal a /var/log/journal/ könyvtárba hozza létre a log fájlokat, amik idővel sok helyet foglalhatnak. Ennek határt szabhatunk.
 A /etc/systemd/journald.conf fájlban a SystemMaxUse változónak értéket adhatunk:
@@ -80,7 +80,7 @@ Linux Systemd Journal
 amik idővel sok helyet foglalhatnak. Ennek határt szabhatunk.</p>
 <p>A <code>/etc/systemd/journald.conf</code> fájlban a <code>SystemMaxUse</code> változónak értéket
 adhatunk:</p>
-<pre><code>SystemMaxUse=50M
+<pre tabindex=0><code>SystemMaxUse=50M
 </code></pre><p>A config fájl módosítását követően a journal service-t újra kell indítanunk,
 hogy a változtatások érvényesüljenek:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>systemctl restart systemd-journald

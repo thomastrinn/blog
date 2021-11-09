@@ -18,7 +18,7 @@ version: '3' services: elasticsearch: image: docker.elastic.co/elasticsearch/ela
 <link rel=mask-icon href=https://thomastrinn.github.io/blog/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.86.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta property="og:title" content="Elasticsearch in Docker">
 <meta property="og:description" content="Az alábbi docker-compose.yml fájl egy elasticsearch és egy elastickibana service-t indít el.
 version: '3' services: elasticsearch: image: docker.elastic.co/elasticsearch/elasticsearch:7.9.3 container_name: ebla_elasticsearch environment: - xpack.security.enabled=false - discovery.type=single-node ulimits: memlock: soft: -1 hard: -1 nofile: soft: 65536 hard: 65536 cap_add: - IPC_LOCK volumes: - elasticsearch_data:/usr/share/elasticsearch/data ports: - 9200:9200 - 9300:9300 kibana: image: docker.elastic.co/kibana/kibana:7.9.3 container_name: ebla_kibana environment: - ELASTICSEARCH_HOSTS=http://elasticsearch:9200 ports: - 5601:5601 depends_on: - elasticsearch volumes: elasticsearch_data: driver: local Ezen beállítások development környezetre ajánlatosak, production esetén ez kerülendő.">
