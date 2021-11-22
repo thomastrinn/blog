@@ -14,7 +14,7 @@
       
       <guid>https://thomastrinn.github.io/blog/posts/pi3-server-part-03-install-docker/</guid>
       <description>Docker telepítése Követve a hivatalos dokumentációt Raspbian esetén a convenience script segítségével telepíthetjük a Docker Engine-t.
-curl -fsSL https://get.docker.com -o get-docker.sh sudo sh get-docker.sh Docker kezelése non-root felhasználóval A dcoker parancs csak root jogosúltsággal használható, azaz csak a root userrel, vagy a sudo paranccsal.
+curl -fsSL https://get.docker.com -o get-docker.sh sudo sh get-docker.sh Docker kezelése non-root felhasználóval A docker parancs csak root jogosúltsággal használható, azaz csak a root userrel, vagy a sudo paranccsal.
 Non-root user esetén, hogy a sudo használatát mellőzhessem ismét a hivatalos leírást követtem:
  Egy docker group létrehozása:  sudo groupadd docker A user felvétele a docker group-ba:  sudo usermod -aG docker $USER Log out és log in, hogy a group membership újra kiértékelődjön.</description>
     </item>
