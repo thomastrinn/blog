@@ -80,14 +80,14 @@ Linux Systemd Journal
 amik idővel sok helyet foglalhatnak. Ennek határt szabhatunk.</p>
 <p>A <code>/etc/systemd/journald.conf</code> fájlban a <code>SystemMaxUse</code> változónak értéket
 adhatunk:</p>
-<pre tabindex=0><code>SystemMaxUse=50M
+<pre tabindex=0><code class=language-properties data-lang=properties>SystemMaxUse=50M
 </code></pre><p>A config fájl módosítását követően a journal service-t újra kell indítanunk,
 hogy a változtatások érvényesüljenek:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>systemctl restart systemd-journald
-</code></pre></div><h1 id=hibák-megtekintése>Hibák megtekintése<a hidden class=anchor aria-hidden=true href=#hibák-megtekintése>#</a></h1>
+<pre tabindex=0><code>systemctl restart systemd-journald
+</code></pre><h1 id=hibák-megtekintése>Hibák megtekintése<a hidden class=anchor aria-hidden=true href=#hibák-megtekintése>#</a></h1>
 <p>Az alábbi paranccsal a log-ban levő hibákat tekinthetjük meg:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>journalctl -r -p <span style=color:#ae81ff>3</span>
-</code></pre></div><p>További részletek: <a href=https://wiki.archlinux.org/title/Systemd/Journal>arch wiki journal</a></p>
+<pre tabindex=0><code>journalctl -r -p 3
+</code></pre><p>További részletek: <a href=https://wiki.archlinux.org/title/Systemd/Journal>arch wiki journal</a></p>
 </div>
 <footer class=post-footer>
 </footer>

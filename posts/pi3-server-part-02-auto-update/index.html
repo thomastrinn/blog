@@ -77,8 +77,8 @@ Raspberry Pi 3 - Part 2: Auto update
 </header>
 <div class=post-content><p>Debian alapú rendszerek esetén az <a href=https://wiki.debian.org/UnattendedUpgrades>unattended-upgrades</a> csomag biztosít lehetőséget update-ek automatikus futtatására.</p>
 <h1 id=telepítés>Telepítés<a hidden class=anchor aria-hidden=true href=#telepítés>#</a></h1>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>sudo apt-get install unattended-upgrades apt-listchanges -y
-</code></pre></div><h1 id=beállítások>Beállítások<a hidden class=anchor aria-hidden=true href=#beállítások>#</a></h1>
+<pre tabindex=0><code>sudo apt-get install unattended-upgrades apt-listchanges -y
+</code></pre><h1 id=beállítások>Beállítások<a hidden class=anchor aria-hidden=true href=#beállítások>#</a></h1>
 <p>Az <code>unattended-upgrades</code> beállításait az <code>/etc/apt/apt.conf.d/50unattended-upgrades</code> fájl
 tartalmazza.</p>
 <p>Lehetőségünk van beállítani az automatikus újraindítást, ha az update után az szükséges:</p>
@@ -91,8 +91,8 @@ tool-ra van szükségünk, ami a <code>mailx</code> package-t támogatja.</p>
 <p>Jelenleg úgy döntöttem e-mail küldésre nincs szükségem.</p>
 <h1 id=aktiválás>Aktiválás<a hidden class=anchor aria-hidden=true href=#aktiválás>#</a></h1>
 <p>Az <code>unattended-upgrades</code> aktiválásához az alábbi parancsot futtassuk:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>sudo dpkg-reconfigure -plow unattended-upgrades
-</code></pre></div><p>Ezen parancs hatására keletkezik az <code>/etc/apt/apt.conf.d/20auto-upgrades</code> fájl.</p>
+<pre tabindex=0><code>sudo dpkg-reconfigure -plow unattended-upgrades
+</code></pre><p>Ezen parancs hatására keletkezik az <code>/etc/apt/apt.conf.d/20auto-upgrades</code> fájl.</p>
 <p>A default beállításokat meghagytam, csak kiegészítettem egy továbbival, aminek hatására
 21 naponta auto clean is fut.</p>
 <pre tabindex=0><code>APT::Periodic::Update-Package-Lists &quot;1&quot;;
@@ -105,8 +105,8 @@ APT::Periodic::AutocleanInterval &quot;21&quot;;
 </ul>
 <p>Végül pedig dry-run módban (ami csak szimulálja a futást, de nem telepít) és debug
 infokkal ellátva futtassuk az <code>unattended-upgrade</code>-t, hogy megfelel-e elvárásainknak:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>sudo unattended-upgrade --dry-run --debug
-</code></pre></div><p>A futások logját az alábbi helyen találjuk: <code>/var/log/unattended-upgrades/unattended-upgrades.log</code></p>
+<pre tabindex=0><code>sudo unattended-upgrade --dry-run --debug
+</code></pre><p>A futások logját az alábbi helyen találjuk: <code>/var/log/unattended-upgrades/unattended-upgrades.log</code></p>
 </div>
 <footer class=post-footer>
 </footer>

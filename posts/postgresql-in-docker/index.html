@@ -84,7 +84,7 @@ használni.</p>
 <p>A <code>docker-compose.yml</code> fájlban definiáljuk a service-ket a volumes-eket.
 Jelen esetben csak egy service-t definiálunk, a postgresql-t.</p>
 <p>A <code>.env</code> fájl tartalma:</p>
-<pre tabindex=0><code class=language-dotenv data-lang=dotenv>COMPOSE_PROJECT_NAME=postgres
+<pre tabindex=0><code class=language-properties data-lang=properties>COMPOSE_PROJECT_NAME=postgres
 
 POSTGRES_PASSWORD=postgres
 POSTGRES_USER=postgres
@@ -94,7 +94,7 @@ részleteket <a href=https://docs.docker.com/compose/reference/envvars/#compose_
 olvashatunk.</p>
 <p>A többi környezeti változót pedig a postgresql service fogja felhasználni.</p>
 <p>A <code>docker-compose.yml</code> fájl tartalma:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>version</span>: <span style=color:#e6db74>&#39;3.8&#39;</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>version</span>: <span style=color:#e6db74>&#39;3.8&#39;</span>
 
 <span style=color:#f92672>services</span>:
   <span style=color:#f92672>postgres</span>:

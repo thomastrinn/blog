@@ -104,15 +104,15 @@ legyen olvasási, írási és futtatási joga:</p>
 </code></pre><p>Majd beállítottam a könyvtár tulajdonosának a <code>pi</code> user-t (ez az aktuális user-em):</p>
 <pre tabindex=0><code>sudo chown -R pi:pi /opt/services
 </code></pre><p>A <code>watchtower</code> könyvtárban létrehoztam a<code>docker-compose.yml</code> fájlt, aminek a tartalma:</p>
-<pre tabindex=0><code>version: &quot;3&quot;
-services:
-  watchtower:
-    image: containrrr/watchtower
-    container_name: watchtower
-    command: --debug --cleanup --schedule &quot;0 30 3 * * *&quot;
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-</code></pre><p>A <code>command</code> részben adtam meg a szükséges paramétereket:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>version</span>: <span style=color:#e6db74>&#34;3&#34;</span>
+<span style=color:#f92672>services</span>:
+  <span style=color:#f92672>watchtower</span>:
+    <span style=color:#f92672>image</span>: <span style=color:#ae81ff>containrrr/watchtower</span>
+    <span style=color:#f92672>container_name</span>: <span style=color:#ae81ff>watchtower</span>
+    <span style=color:#f92672>command</span>: --<span style=color:#ae81ff>debug --cleanup --schedule &#34;0 30 3 * * *&#34;</span>
+    <span style=color:#f92672>volumes</span>:
+      - <span style=color:#ae81ff>/var/run/docker.sock:/var/run/docker.sock</span>
+</code></pre></div><p>A <code>command</code> részben adtam meg a szükséges paramétereket:</p>
 <ul>
 <li><code>--cleanup</code>: <a href=https://containrrr.dev/watchtower/arguments/#cleanup>régi image-ek törlése update után</a></li>
 <li><code>--schedule "0 30 3 * * *"</code>: <a href=https://containrrr.dev/watchtower/arguments/#scheduling>időzített futás</a> beállítása minden nap 3:30-ra.</li>
