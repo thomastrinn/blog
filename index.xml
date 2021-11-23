@@ -39,7 +39,7 @@ Non-root user esetén, hogy a sudo használatát mellőzhessem ismét a hivatalo
       <description>Debian alapú rendszerek esetén az unattended-upgrades csomag biztosít lehetőséget update-ek automatikus futtatására.
 Telepítés sudo apt-get install unattended-upgrades apt-listchanges -y Beállítások Az unattended-upgrades beállításait az /etc/apt/apt.conf.d/50unattended-upgrades fájl tartalmazza.
 Lehetőségünk van beállítani az automatikus újraindítást, ha az update után az szükséges:
-Unattended-Upgrade::Automatic-Reboot &amp;quot;true&amp;quot;; Továbbá lehetőségünk van e-mail értesítést is küldeni az alábbi két sorral:
+Unattended-Upgrade::Automatic-Reboot &amp;quot;true&amp;quot;; Unattended-Upgrade::Automatic-Reboot-Time &amp;quot;03:00&amp;quot;; Továbbá lehetőségünk van e-mail értesítést is küldeni az alábbi két sorral:
 Unattended-Upgrade::Mail &amp;quot;user@example.com&amp;quot;; Unattended-Upgrade::MailReport &amp;quot;on-change&amp;quot;; De ez csak akkor fog működni, ha a rendszer tud e-mail-t küldeni, ehhez pedig egy olyan tool-ra van szükségünk, ami a mailx package-t támogatja.</description>
     </item>
     
