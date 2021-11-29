@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Series on Blog</title>
+    <link>https://thomastrinn.github.io/blog/series/</link>
+    <description>Recent content in Series on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Nov 2021 19:16:40 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raspberry Pi 3 Server Monitoring</title>
+      <link>https://thomastrinn.github.io/blog/series/raspberry-pi-3-server-monitoring/</link>
+      <pubDate>Mon, 29 Nov 2021 19:16:40 +0100</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/series/raspberry-pi-3-server-monitoring/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
