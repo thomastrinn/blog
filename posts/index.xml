@@ -14,9 +14,9 @@
       
       <guid>https://thomastrinn.github.io/blog/posts/pi3-server-part-06-server-monitoring-part-02-system-metrics/</guid>
       <description>A Server Monitoring sorozat folytatásaként most a hardware és os metric adatok gyűjtésével és megjelenítésével foglalkozom.
-System metric adatok elérése A Prometheus egyik hivatalos metric exporter-je a Node eyporter , amely pont megfelel céljaim számára.
-A node exporter is futtatható docker container-ként, és docker-compose service-ként az alábbi módon hoztam létre:
-node_exporter: image: quay.io/prometheus/node-exporter:latest container_name: node_exporter command: --path.rootfs=/host pid: host ports: - &amp;#34;9100:9100&amp;#34; volumes: - /:/host:ro,rslave restart: unless-stopped amelyet a grafana-stack docker-compose.</description>
+System metric adatok elérése A Prometheus egyik hivatalos metric exporter-je a Node exporter , amely pont megfelel céljaim számára.
+A node exporter futtatható docker container-ként és docker-compose service-ként az alábbi módon hoztam létre:
+node_exporter: image: quay.io/prometheus/node-exporter:latest container_name: node_exporter command: --path.rootfs=/host pid: host ports: - &amp;#34;9100:9100&amp;#34; volumes: - /:/host:ro,rslave restart: unless-stopped amelyet a grafana-stack docker-compose.yml fájlba vettem fel, hogy egy docker network-on legyen a stack többi részével.</description>
     </item>
     
     <item>
@@ -25,10 +25,10 @@ node_exporter: image: quay.io/prometheus/node-exporter:latest container_name: no
       <pubDate>Mon, 29 Nov 2021 19:14:12 +0100</pubDate>
       
       <guid>https://thomastrinn.github.io/blog/posts/pi3-server-part-05-server-monitoring-part-01-grafana-stack/</guid>
-      <description>A Raspberry Pi server monitorozását a Grafana Labs eszközevel kívánom megoldani.
+      <description>A Raspberry Pi server monitorozását a Grafana Labs eszközeivel kívánom megoldani.
 A célom a rendszer és a docker container-ek monitorozása, az adatok megjelenítése grafikonokon - úgynevezett dashboard-on -, a rendszer és docker container logok egységes kezelése, riasztások küldése nem kívánt állapotok esetén.
 A Grafana Labs főbb eszközei:
- Grafana: metric adat visualizáló, kereső és riszasztás kezelő rendszer Prometheus: metric adatokat gyűjtő és tároló rendszer Loki: log aggregaló rendszer Promtail: agent, amely logokat továbbít Loki-nak.</description>
+ Grafana: metric adat vizualizáló, kereső és riszasztás kezelő rendszer Prometheus: metric adatokat gyűjtő és tároló rendszer Loki: log aggregáló rendszer Promtail: agent, amely logokat továbbít Loki-nak.</description>
     </item>
     
     <item>
