@@ -3,18 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://thomastrinn.github.io/blog/</loc>
-    <lastmod>2021-11-29T19:16:40+01:00</lastmod>
+    <lastmod>2021-12-05T16:23:52+01:00</lastmod>
   </url><url>
     <loc>https://thomastrinn.github.io/blog/posts/</loc>
-    <lastmod>2021-11-29T19:16:40+01:00</lastmod>
+    <lastmod>2021-12-05T16:23:52+01:00</lastmod>
   </url><url>
-    <loc>https://thomastrinn.github.io/blog/posts/pi3-server-part-06-server-monitoring-part-02-system-metrics/</loc>
-    <lastmod>2021-11-29T19:16:40+01:00</lastmod>
+    <loc>https://thomastrinn.github.io/blog/posts/pi3-server-part-09-server-monitoring-part-05-container-logs/</loc>
+    <lastmod>2021-12-05T16:23:52+01:00</lastmod>
   </url><url>
     <loc>https://thomastrinn.github.io/blog/series/raspberry-pi-3-server-monitoring/</loc>
-    <lastmod>2021-11-29T19:16:40+01:00</lastmod>
+    <lastmod>2021-12-05T16:23:52+01:00</lastmod>
   </url><url>
     <loc>https://thomastrinn.github.io/blog/series/</loc>
+    <lastmod>2021-12-05T16:23:52+01:00</lastmod>
+  </url><url>
+    <loc>https://thomastrinn.github.io/blog/posts/pi3-server-part-08-server-monitoring-part-04-system-logs/</loc>
+    <lastmod>2021-12-05T09:30:06+01:00</lastmod>
+  </url><url>
+    <loc>https://thomastrinn.github.io/blog/posts/pi3-server-part-07-server-monitoring-part-03-container-metrics/</loc>
+    <lastmod>2021-12-04T11:17:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thomastrinn.github.io/blog/posts/pi3-server-part-06-server-monitoring-part-02-system-metrics/</loc>
     <lastmod>2021-11-29T19:16:40+01:00</lastmod>
   </url><url>
     <loc>https://thomastrinn.github.io/blog/posts/pi3-server-part-05-server-monitoring-part-01-grafana-stack/</loc>

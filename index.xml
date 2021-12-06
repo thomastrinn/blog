@@ -6,7 +6,43 @@
     <description>Recent content on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Nov 2021 19:16:40 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Dec 2021 16:23:52 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raspberry Pi 3 - Part 9: Server Monitoring Part 5 - Container Logs</title>
+      <link>https://thomastrinn.github.io/blog/posts/pi3-server-part-09-server-monitoring-part-05-container-logs/</link>
+      <pubDate>Sun, 05 Dec 2021 16:23:52 +0100</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/pi3-server-part-09-server-monitoring-part-05-container-logs/</guid>
+      <description>A Server Monitoring sorozat folytatásaként most a docker container logok gyűjtésével és megjelenítésével foglalkozom.
+Docker container logok gyűjtése A container logok helye: /var/lib/docker/&amp;lt;container-id&amp;gt;/&amp;lt;container-id&amp;gt;-json.log
+Ahol a &amp;lt;container-id&amp;gt; a docker container-ek egyedi azonosítója.
+A docker container logok gyűjtéséhez a Promtail service számára a /var/lib/docker könyvtárat kell volume-ként becsatolni:
+promtail: image: grafana/promtail:latest container_name: promtail command: -config.file=/etc/promtail/config.yml volumes: - ./promtail/promtail-config.yml:/etc/promtail/config.yml - /var/log:/var/log:ro - /var/lib/docker/:/var/lib/docker:ro restart: unless-stopped Így a promtail container eléri a host docker log-jait és most már be tudjuk állítani, hogy a promtail a /var/lib/docker/containers/*/*log fájlokat figyelve a logokat elküldje a Loki-nak.</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi 3 - Part 8: Server Monitoring Part 4 - System Logs</title>
+      <link>https://thomastrinn.github.io/blog/posts/pi3-server-part-08-server-monitoring-part-04-system-logs/</link>
+      <pubDate>Sun, 05 Dec 2021 09:30:06 +0100</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/pi3-server-part-08-server-monitoring-part-04-system-logs/</guid>
+      <description>A Server Monitoring sorozat folytatásaként most a linux host system log gyűjtésével és megjelenítésével foglalkozom.
+System log gyűjtése A system log gyűjtéséhez a Promtail service számára a linux host /var/log könyvtárát kell volume-ként becsatolni. Az eredeti docker-compose promtail service-t ezzel kiegészítve az alábbi:
+promtail: image: grafana/promtail:latest container_name: promtail command: -config.file=/etc/promtail/config.yml volumes: - ./promtail/promtail-config.yml:/etc/promtail/config.yml - /var/log:/var/log:ro restart: unless-stopped Így a promtail container eléri a host system log-jait és most már be tudjuk állítani, hogy a promtail a /var/log könyvtárat figyelve a logokat elküldje a Loki-nak.</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi 3 - Part 7: Server Monitoring Part 3 - Container Metrics</title>
+      <link>https://thomastrinn.github.io/blog/posts/pi3-server-part-07-server-monitoring-part-03-container-metrics/</link>
+      <pubDate>Sat, 04 Dec 2021 11:17:00 +0100</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/pi3-server-part-07-server-monitoring-part-03-container-metrics/</guid>
+      <description>A Server Monitoring sorozat folytatásaként most a futó docker containerek erőforrás igényeit szeretném kinyerni és megjeleníteni.
+Docker daemon Van lehetőség közvetlenül a docker daemon-ből kinyerni metric adatokat, a hivatalos docker dokumentációban találtam leírást hozzá. Jelenleg még fejlesztés alatt van, így csak experimental módban lehet használni.
+A /etc/docker/daemon.json fájlban adható meg a metric végpont engedélyezése:
+{ &amp;#34;metrics-addr&amp;#34; : &amp;#34;127.0.0.1:9323&amp;#34;, &amp;#34;experimental&amp;#34; : true } Ahhoz, hogy érvényesüljön a beállítás újra kell indítani a docker daemon-t:</description>
+    </item>
+    
     <item>
       <title>Raspberry Pi 3 - Part 6: Server Monitoring Part 2 - System Metrics</title>
       <link>https://thomastrinn.github.io/blog/posts/pi3-server-part-06-server-monitoring-part-02-system-metrics/</link>
@@ -48,10 +84,10 @@ A watchtower monitorozza a futó Docker container-jeinket, hogy a container-ek a
       <pubDate>Sun, 21 Nov 2021 16:29:28 +0100</pubDate>
       
       <guid>https://thomastrinn.github.io/blog/posts/pi3-server-part-03-install-docker/</guid>
-      <description>Docker telepítése Követve a hivatalos dokumentációt Raspbian esetén a convenience script segítségével telepíthetjük a Docker Engine-t.
-curl -fsSL https://get.docker.com -o get-docker.sh sudo sh get-docker.sh Docker kezelése non-root felhasználóval A docker parancs csak root jogosúltsággal használható, azaz csak a root userrel, vagy a sudo paranccsal.
-Non-root user esetén, hogy a sudo használatát mellőzhessem ismét a hivatalos leírást követtem:
- Egy docker group létrehozása:  sudo groupadd docker A user felvétele a docker group-ba:  sudo usermod -aG docker $USER Log out és log in, hogy a group membership újra kiértékelődjön.</description>
+      <description>Előfeltételek A docker telepítése előtt a Raspberry Pi 3 Model B+ esetében szükséges az alábbi cgroups beállításokkal kiegészíteni a /boot/cmdline.txt fájlt:
+cgroup_enable=memory cgroup_memory=1 cgroup_enable=cpuset swapaccount=1 A módosítást követően újra kell indítsuk a pi-t, hogy érvényesüljenek a kernel módosítások:
+sudo reboot Újraindulást követően a sudo cat /proc/cgroups eredményeként látnunk kell a cpuset és memory-t a listán.
+Docker telepítése Követve a hivatalos dokumentációt Raspbian esetén a convenience script segítségével telepíthetjük a Docker Engine-t.</description>
     </item>
     
     <item>
