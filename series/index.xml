@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 05 Dec 2021 16:23:52 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/series/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Raspberry Pi 3 Server</title>
+      <link>https://thomastrinn.github.io/blog/series/raspberry-pi-3-server/</link>
+      <pubDate>Sun, 05 Dec 2021 16:23:52 +0100</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/series/raspberry-pi-3-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Raspberry Pi 3 Server Monitoring</title>
       <link>https://thomastrinn.github.io/blog/series/raspberry-pi-3-server-monitoring/</link>
       <pubDate>Sun, 05 Dec 2021 16:23:52 +0100</pubDate>

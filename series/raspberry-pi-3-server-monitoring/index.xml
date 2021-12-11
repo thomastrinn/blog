@@ -27,7 +27,7 @@ promtail: image: grafana/promtail:latest container_name: promtail command: -conf
       
       <guid>https://thomastrinn.github.io/blog/posts/pi3-server-part-08-server-monitoring-part-04-system-logs/</guid>
       <description>A Server Monitoring sorozat folytatásaként most a linux host system log gyűjtésével és megjelenítésével foglalkozom.
-System log gyűjtése A system log gyűjtéséhez a Promtail service számára a linux host /var/log könyvtárát kell volume-ként becsatolni. Az eredeti docker-compose promtail service-t ezzel kiegészítve az alábbi:
+System log gyűjtése A system log gyűjtéséhez a Promtail service számára a linux host /var/log könyvtárát kell volume-ként becsatolni. Az eredeti docker-compose promtail service ezzel kiegészítve az alábbi:
 promtail: image: grafana/promtail:latest container_name: promtail command: -config.file=/etc/promtail/config.yml volumes: - ./promtail/promtail-config.yml:/etc/promtail/config.yml - /var/log:/var/log:ro restart: unless-stopped Így a promtail container eléri a host system log-jait és most már be tudjuk állítani, hogy a promtail a /var/log könyvtárat figyelve a logokat elküldje a Loki-nak.</description>
     </item>
     
@@ -38,7 +38,7 @@ promtail: image: grafana/promtail:latest container_name: promtail command: -conf
       
       <guid>https://thomastrinn.github.io/blog/posts/pi3-server-part-07-server-monitoring-part-03-container-metrics/</guid>
       <description>A Server Monitoring sorozat folytatásaként most a futó docker containerek erőforrás igényeit szeretném kinyerni és megjeleníteni.
-Docker daemon Van lehetőség közvetlenül a docker daemon-ből kinyerni metric adatokat, a hivatalos docker dokumentációban találtam leírást hozzá. Jelenleg még fejlesztés alatt van, így csak experimental módban lehet használni.
+Docker daemon Van lehetőség közvetlenül a docker daemon-ból kinyerni metric adatokat, a hivatalos docker dokumentációban találtam leírást hozzá. Jelenleg még fejlesztés alatt van, így csak experimental módban lehet használni.
 A /etc/docker/daemon.json fájlban adható meg a metric végpont engedélyezése:
 { &amp;#34;metrics-addr&amp;#34; : &amp;#34;127.0.0.1:9323&amp;#34;, &amp;#34;experimental&amp;#34; : true } Ahhoz, hogy érvényesüljön a beállítás újra kell indítani a docker daemon-t:</description>
     </item>

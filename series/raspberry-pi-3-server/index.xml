@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Blog</title>
-    <link>https://thomastrinn.github.io/blog/</link>
-    <description>Recent content on Blog</description>
+    <title>Raspberry Pi 3 Server on Blog</title>
+    <link>https://thomastrinn.github.io/blog/series/raspberry-pi-3-server/</link>
+    <description>Recent content in Raspberry Pi 3 Server on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Dec 2021 16:23:52 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Dec 2021 16:23:52 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/series/raspberry-pi-3-server/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Raspberry Pi 3 - Part 9: Server Monitoring Part 5 - Container Logs</title>
       <link>https://thomastrinn.github.io/blog/posts/pi3-server-part-09-server-monitoring-part-05-container-logs/</link>
@@ -113,65 +113,6 @@ Unattended-Upgrade::Mail &amp;quot;user@example.com&amp;quot;; Unattended-Upgrad
 Miután az SD kártyát a számítógépemhez csatlakoztattam az RP Imager-ben OS-ként nem a default beállítást választottam, hanem az other opció alatt elérhető DE nélküli változatot (ebből két verzió létezik: Lite és Full, az utóbbit választottam).
 Az Advanced Options segítségével be tudtam állítani a wifi-t, a locale beállításokat és az ssh-t.</description>
     </item>
-    
-    <item>
-      <title>Get Started With Docker Compose</title>
-      <link>https://thomastrinn.github.io/blog/posts/get-started-with-docker-compose/</link>
-      <pubDate>Fri, 06 Aug 2021 08:23:05 +0200</pubDate>
-      
-      <guid>https://thomastrinn.github.io/blog/posts/get-started-with-docker-compose/</guid>
-      <description>A Docker Compose egy olyan eszköz, aminek segítségével definiálni és elindítani tudunk több docker container-t.
-Docker Compose fájlok A docker-compose.yml fájl tartalmazza azon service-eket amelyeket docker container-ként akarunk futtatni.
-A .env fájl nem kötelező, de ha használjuk, akkor környezeti változókat tartalmazhat, amelyek a docker-compose.yml fájlban behivatkozhatóak. További részletek itt találhatóak.
-Rendelkezésre állnak előre definiált környezeti változók, amelyekkel finomhangolhatjuk a Docker Compose működését. Az egyik ilyen környezeti változó a COMPOSE_PROJECT_NAME, amellyel a projektünk nevét adhatjuk meg, amit a docker-compose utána felhasznál prefixként a létrehozandó container-ek, volume-ok, network-ok nevéhez.</description>
-    </item>
-    
-    <item>
-      <title>Elasticsearch in Docker</title>
-      <link>https://thomastrinn.github.io/blog/posts/elasticsearch-in-docker/</link>
-      <pubDate>Fri, 06 Aug 2021 08:09:59 +0200</pubDate>
-      
-      <guid>https://thomastrinn.github.io/blog/posts/elasticsearch-in-docker/</guid>
-      <description>Az alábbi docker-compose.yml fájl egy elasticsearch és egy elastickibana service-t indít el.
-version: &amp;#39;3&amp;#39; services: elasticsearch: image: docker.elastic.co/elasticsearch/elasticsearch:7.9.3 container_name: ebla_elasticsearch environment: - xpack.security.enabled=false - discovery.type=single-node ulimits: memlock: soft: -1 hard: -1 nofile: soft: 65536 hard: 65536 cap_add: - IPC_LOCK volumes: - elasticsearch_data:/usr/share/elasticsearch/data ports: - 9200:9200 - 9300:9300 kibana: image: docker.elastic.co/kibana/kibana:7.9.3 container_name: ebla_kibana environment: - ELASTICSEARCH_HOSTS=http://elasticsearch:9200 ports: - 5601:5601 depends_on: - elasticsearch volumes: elasticsearch_data: driver: local Ezen beállítások development környezetre ajánlatosak, production esetén ez kerülendő.</description>
-    </item>
-    
-    <item>
-      <title>SonarQube in Docker</title>
-      <link>https://thomastrinn.github.io/blog/posts/sonarqube-in-docker/</link>
-      <pubDate>Fri, 06 Aug 2021 07:54:46 +0200</pubDate>
-      
-      <guid>https://thomastrinn.github.io/blog/posts/sonarqube-in-docker/</guid>
-      <description>A SonarQube egy kód minőség elemző eszköz.
-SonarQube futtatása docker-compose service-ként docker-compose.yml:
-version: &amp;#34;3&amp;#34; services: sonarqube: image: sonarqube:8.9-community container_name: sonarqube depends_on: - db ulimits: memlock: soft: -1 hard: -1 nofile: soft: 65536 hard: 65536 environment: SONAR_JDBC_URL: jdbc:postgresql://db:5432/sonar SONAR_JDBC_USERNAME: sonar SONAR_JDBC_PASSWORD: sonar volumes: - sonarqube_data:/opt/sonarqube/data - sonarqube_extensions:/opt/sonarqube/extensions - sonarqube_logs:/opt/sonarqube/logs ports: - &amp;#34;9010:9000&amp;#34; db: image: postgres:12 container_name: sonarqube-postgres environment: POSTGRES_USER: sonar POSTGRES_PASSWORD: sonar ports: - 14432:5432 volumes: - postgresql:/var/lib/postgresql - postgresql_data:/var/lib/postgresql/data volumes: sonarqube_data: sonarqube_extensions: sonarqube_logs: postgresql: postgresql_data: SonarQube indítása: docker-compose up -d</description>
-    </item>
-    
-    <item>
-      <title>PostgreSQL in Docker</title>
-      <link>https://thomastrinn.github.io/blog/posts/postgresql-in-docker/</link>
-      <pubDate>Wed, 04 Aug 2021 08:04:34 +0200</pubDate>
-      
-      <guid>https://thomastrinn.github.io/blog/posts/postgresql-in-docker/</guid>
-      <description>PostgreSQL server könnyen indítható docker container segítségével. A container létrehozását docker-compose segítségével végzem.
-PostgreSQL docker-compose service Ahhoz, hogy docker-compose segítségével hozzunk létre a postgresql docker containert két fájlra lesz szükségünk. Az egyik a .env fájl a másik a docker-compose.yml.
-A .env fájl nem kötelező, de praktikus, itt környezeti változókat definiálhatunk, amelyeket a docker-compose.yml fájlban fel tudunk használni.
-A docker-compose.yml fájlban definiáljuk a service-ket a volumes-eket. Jelen esetben csak egy service-t definiálunk, a postgresql-t.</description>
-    </item>
-    
-    <item>
-      <title>Linux Systemd Journal</title>
-      <link>https://thomastrinn.github.io/blog/posts/linux-systemd-journal/</link>
-      <pubDate>Tue, 03 Aug 2021 14:27:25 +0200</pubDate>
-      
-      <guid>https://thomastrinn.github.io/blog/posts/linux-systemd-journal/</guid>
-      <description>Journal mérete A journal a /var/log/journal/ könyvtárba hozza létre a log fájlokat, amik idővel sok helyet foglalhatnak. Ennek határt szabhatunk.
-A /etc/systemd/journald.conf fájlban a SystemMaxUse változónak értéket adhatunk:
-SystemMaxUse=50M A config fájl módosítását követően a journal service-t újra kell indítanunk, hogy a változtatások érvényesüljenek:
-systemctl restart systemd-journald Hibák megtekintése Az alábbi paranccsal a log-ban levő hibákat tekinthetjük meg:
-journalctl -r -p 3 További részletek: arch wiki journal</description>
-    </item>
-    
     
   </channel>
 </rss>

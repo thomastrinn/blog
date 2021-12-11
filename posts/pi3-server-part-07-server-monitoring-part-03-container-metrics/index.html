@@ -6,7 +6,7 @@
 <title>Raspberry Pi 3 - Part 7: Server Monitoring Part 3 - Container Metrics | Blog</title>
 <meta name=keywords content>
 <meta name=description content="A Server Monitoring sorozat folytatásaként most a futó docker containerek erőforrás igényeit szeretném kinyerni és megjeleníteni.
-Docker daemon Van lehetőség közvetlenül a docker daemon-ből kinyerni metric adatokat, a hivatalos docker dokumentációban találtam leírást hozzá. Jelenleg még fejlesztés alatt van, így csak experimental módban lehet használni.
+Docker daemon Van lehetőség közvetlenül a docker daemon-ból kinyerni metric adatokat, a hivatalos docker dokumentációban találtam leírást hozzá. Jelenleg még fejlesztés alatt van, így csak experimental módban lehet használni.
 A /etc/docker/daemon.json fájlban adható meg a metric végpont engedélyezése:
 { &#34;metrics-addr&#34; : &#34;127.0.0.1:9323&#34;, &#34;experimental&#34; : true } Ahhoz, hogy érvényesüljön a beállítás újra kell indítani a docker daemon-t:">
 <meta name=author content>
@@ -20,28 +20,29 @@ A /etc/docker/daemon.json fájlban adható meg a metric végpont engedélyezése
 <link rel=mask-icon href=https://thomastrinn.github.io/blog/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.89.3">
+<meta name=generator content="Hugo 0.89.4">
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
 </noscript><meta property="og:title" content="Raspberry Pi 3 - Part 7: Server Monitoring Part 3 - Container Metrics">
 <meta property="og:description" content="A Server Monitoring sorozat folytatásaként most a futó docker containerek erőforrás igényeit szeretném kinyerni és megjeleníteni.
-Docker daemon Van lehetőség közvetlenül a docker daemon-ből kinyerni metric adatokat, a hivatalos docker dokumentációban találtam leírást hozzá. Jelenleg még fejlesztés alatt van, így csak experimental módban lehet használni.
+Docker daemon Van lehetőség közvetlenül a docker daemon-ból kinyerni metric adatokat, a hivatalos docker dokumentációban találtam leírást hozzá. Jelenleg még fejlesztés alatt van, így csak experimental módban lehet használni.
 A /etc/docker/daemon.json fájlban adható meg a metric végpont engedélyezése:
 { &#34;metrics-addr&#34; : &#34;127.0.0.1:9323&#34;, &#34;experimental&#34; : true } Ahhoz, hogy érvényesüljön a beállítás újra kell indítani a docker daemon-t:">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://thomastrinn.github.io/blog/posts/pi3-server-part-07-server-monitoring-part-03-container-metrics/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-12-04T11:17:00+01:00">
 <meta property="article:modified_time" content="2021-12-04T11:17:00+01:00">
+<meta property="og:see_also" content="https://thomastrinn.github.io/blog/posts/pi3-server-part-09-server-monitoring-part-05-container-logs/"><meta property="og:see_also" content="https://thomastrinn.github.io/blog/posts/pi3-server-part-08-server-monitoring-part-04-system-logs/"><meta property="og:see_also" content="https://thomastrinn.github.io/blog/posts/pi3-server-part-06-server-monitoring-part-02-system-metrics/"><meta property="og:see_also" content="https://thomastrinn.github.io/blog/posts/pi3-server-part-05-server-monitoring-part-01-grafana-stack/"><meta property="og:see_also" content="https://thomastrinn.github.io/blog/posts/pi3-server-part-04-docker-container-auto-update/">
 <meta property="og:see_also" content="https://thomastrinn.github.io/blog/posts/pi3-server-part-09-server-monitoring-part-05-container-logs/"><meta property="og:see_also" content="https://thomastrinn.github.io/blog/posts/pi3-server-part-08-server-monitoring-part-04-system-logs/"><meta property="og:see_also" content="https://thomastrinn.github.io/blog/posts/pi3-server-part-06-server-monitoring-part-02-system-metrics/"><meta property="og:see_also" content="https://thomastrinn.github.io/blog/posts/pi3-server-part-05-server-monitoring-part-01-grafana-stack/">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="Raspberry Pi 3 - Part 7: Server Monitoring Part 3 - Container Metrics">
 <meta name=twitter:description content="A Server Monitoring sorozat folytatásaként most a futó docker containerek erőforrás igényeit szeretném kinyerni és megjeleníteni.
-Docker daemon Van lehetőség közvetlenül a docker daemon-ből kinyerni metric adatokat, a hivatalos docker dokumentációban találtam leírást hozzá. Jelenleg még fejlesztés alatt van, így csak experimental módban lehet használni.
+Docker daemon Van lehetőség közvetlenül a docker daemon-ból kinyerni metric adatokat, a hivatalos docker dokumentációban találtam leírást hozzá. Jelenleg még fejlesztés alatt van, így csak experimental módban lehet használni.
 A /etc/docker/daemon.json fájlban adható meg a metric végpont engedélyezése:
 { &#34;metrics-addr&#34; : &#34;127.0.0.1:9323&#34;, &#34;experimental&#34; : true } Ahhoz, hogy érvényesüljön a beállítás újra kell indítani a docker daemon-t:">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://thomastrinn.github.io/blog/posts/"},{"@type":"ListItem","position":2,"name":"Raspberry Pi 3 - Part 7: Server Monitoring Part 3 - Container Metrics","item":"https://thomastrinn.github.io/blog/posts/pi3-server-part-07-server-monitoring-part-03-container-metrics/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Raspberry Pi 3 - Part 7: Server Monitoring Part 3 - Container Metrics","name":"Raspberry Pi 3 - Part 7: Server Monitoring Part 3 - Container Metrics","description":"A Server Monitoring sorozat folytatásaként most a futó docker containerek erőforrás igényeit szeretném kinyerni és megjeleníteni.\nDocker daemon Van lehetőség közvetlenül a docker daemon-ből kinyerni metric adatokat, a hivatalos docker dokumentációban találtam leírást hozzá. Jelenleg még fejlesztés alatt van, így csak experimental módban lehet használni.\nA /etc/docker/daemon.json fájlban adható meg a metric végpont engedélyezése:\n{ \u0026#34;metrics-addr\u0026#34; : \u0026#34;127.0.0.1:9323\u0026#34;, \u0026#34;experimental\u0026#34; : true } Ahhoz, hogy érvényesüljön a beállítás újra kell indítani a docker daemon-t:","keywords":[],"articleBody":"A Server Monitoring sorozat folytatásaként most a futó docker containerek erőforrás igényeit szeretném kinyerni és megjeleníteni.\nDocker daemon Van lehetőség közvetlenül a docker daemon-ből kinyerni metric adatokat, a hivatalos docker dokumentációban találtam leírást hozzá. Jelenleg még fejlesztés alatt van, így csak experimental módban lehet használni.\nA /etc/docker/daemon.json fájlban adható meg a metric végpont engedélyezése:\n{ \"metrics-addr\" : \"127.0.0.1:9323\", \"experimental\" : true } Ahhoz, hogy érvényesüljön a beállítás újra kell indítani a docker daemon-t:\nsudo systemctl restart docker.service Ezt követően a docker daemon a 9323-as porton Prometheus kompatibilis metric adatokat szolgáltat, ezt a következőképp ellenőrizhetjük:\nPort ellenörzése:\nsudo lsof -i -P -n | grep LISTEN | grep 9323 Metric végpont ellenörzése:\ncurl localhost:9323/metrics Előre elkészített Grafana dashboard-ot nem találtam a docker daemon-hoz, illetve a docker daemon által szolgáltatott metric végponton a docker daemon internal állapotáról kapunk metric adatokat és a futó docker container-ekről, azok erőforrás igényéről nem. Így ezt nem tudom felhasználni.\ncAdvisor A cAdvisor egy igen népszerű eszköz, azonban sajnos arm architekturára nincs docker image-ük, de vannak nem hivatalos arm buildek, ezek közül a zcube/cadvisor-t választottam.\nA cAdvisor docker-compose service-ként az alábbi módon hoztam létre:\ncadvisor: image: zcube/cadvisor:latest container_name: cadvisor ports: - \"8080:8080\" volumes: - /:/rootfs:ro - /var/run:/var/run:ro - /sys:/sys:ro - /var/lib/docker/:/var/lib/docker:ro - /dev/disk/:/dev/disk:ro devices: - /dev/kmsg privileged: true ipc: shareable security_opt: - label=disable restart: unless-stopped amely a grafana-stack docker-compose.yml fájlba vettem fel, hogy egy docker network-on legyen a stack többi részével.\ncAdvisor metric adatok gyűjtése Ahhoz, hogy Prometheus elérje a cAdvicser metric végpontját azt a prometheus.yml fájlban fel kell venni a scrape_configs rész alá:\nglobal: scrape_interval: 5s scrape_configs: - job_name: 'cadvisor' static_configs: - targets: ['cadvisor:8080'] A módosítást, kiegészítést követően újra kell olvastatni Prometheus-al a config fájlt.\ncAdvisor metric adatok megjelenítése A cAdvisor által szolgáltatott metric adatok, most már Prometheus-ba kerülnek, így egy grafana dashcoard-ot is választottam: Docker and OS Metrics for Raspberry Piby oijkn\nEz egyben a node exporter adatokból is dolgozik, nemcsak a cAdvisor adataiból, így ezt igen praktikusnak találom.\n","wordCount":"322","inLanguage":"en","datePublished":"2021-12-04T11:17:00+01:00","dateModified":"2021-12-04T11:17:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://thomastrinn.github.io/blog/posts/pi3-server-part-07-server-monitoring-part-03-container-metrics/"},"publisher":{"@type":"Organization","name":"Blog","logo":{"@type":"ImageObject","url":"https://thomastrinn.github.io/blog/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Raspberry Pi 3 - Part 7: Server Monitoring Part 3 - Container Metrics","name":"Raspberry Pi 3 - Part 7: Server Monitoring Part 3 - Container Metrics","description":"A Server Monitoring sorozat folytatásaként most a futó docker containerek erőforrás igényeit szeretném kinyerni és megjeleníteni.\nDocker daemon Van lehetőség közvetlenül a docker daemon-ból kinyerni metric adatokat, a hivatalos docker dokumentációban találtam leírást hozzá. Jelenleg még fejlesztés alatt van, így csak experimental módban lehet használni.\nA /etc/docker/daemon.json fájlban adható meg a metric végpont engedélyezése:\n{ \u0026#34;metrics-addr\u0026#34; : \u0026#34;127.0.0.1:9323\u0026#34;, \u0026#34;experimental\u0026#34; : true } Ahhoz, hogy érvényesüljön a beállítás újra kell indítani a docker daemon-t:","keywords":[],"articleBody":"A Server Monitoring sorozat folytatásaként most a futó docker containerek erőforrás igényeit szeretném kinyerni és megjeleníteni.\nDocker daemon Van lehetőség közvetlenül a docker daemon-ból kinyerni metric adatokat, a hivatalos docker dokumentációban találtam leírást hozzá. Jelenleg még fejlesztés alatt van, így csak experimental módban lehet használni.\nA /etc/docker/daemon.json fájlban adható meg a metric végpont engedélyezése:\n{ \"metrics-addr\" : \"127.0.0.1:9323\", \"experimental\" : true } Ahhoz, hogy érvényesüljön a beállítás újra kell indítani a docker daemon-t:\nsudo systemctl restart docker.service Ezt követően a docker daemon a 9323-as porton Prometheus kompatibilis metric adatokat szolgáltat, ezt a következőképp ellenőrizhetjük:\nPort ellenőrzése:\nsudo lsof -i -P -n | grep LISTEN | grep 9323 Metric végpont ellenőrzése:\ncurl localhost:9323/metrics Előre elkészített Grafana dashboard-ot nem találtam a docker daemon-hoz, illetve a docker daemon által szolgáltatott metric végponton a docker daemon internal állapotáról kapunk metric adatokat és a futó docker container-ekről, azok erőforrás igényéről nem. Így ezt nem tudom felhasználni.\ncAdvisor A cAdvisor egy igen népszerű eszköz, azonban sajnos arm architektúrára nincs docker image-ük, de vannak nem hivatalos arm buildek, ezek közül a zcube/cadvisor-t választottam.\nA cAdvisor docker-compose service-ként az alábbi módon hoztam létre:\ncadvisor: image: zcube/cadvisor:latest container_name: cadvisor ports: - \"8080:8080\" volumes: - /:/rootfs:ro - /var/run:/var/run:ro - /sys:/sys:ro - /var/lib/docker/:/var/lib/docker:ro - /dev/disk/:/dev/disk:ro devices: - /dev/kmsg privileged: true ipc: shareable security_opt: - label=disable restart: unless-stopped amely a grafana-stack docker-compose.yml fájlba vettem fel, hogy egy docker network-ön legyen a stack többi részével.\ncAdvisor metric adatok gyűjtése Ahhoz, hogy Prometheus elérje a cAdvicser metric végpontját azt a prometheus.yml fájlban fel kell venni a scrape_configs rész alá:\nglobal: scrape_interval: 5s scrape_configs: - job_name: 'cadvisor' static_configs: - targets: ['cadvisor:8080'] A módosítást, kiegészítést követően újra kell olvastatni Prometheus-al a config fájlt.\ncAdvisor metric adatok megjelenítése A cAdvisor által szolgáltatott metric adatok, most már Prometheus-ba kerülnek, így egy grafana dashboard-ot is választottam: Docker and OS Metrics for Raspberry Pi by oijkn\nEz egyben a node exporter adatokból is dolgozik, nemcsak a cAdvisor adataiból, így ezt igen praktikusnak találom.\n","wordCount":"323","inLanguage":"en","datePublished":"2021-12-04T11:17:00+01:00","dateModified":"2021-12-04T11:17:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://thomastrinn.github.io/blog/posts/pi3-server-part-07-server-monitoring-part-03-container-metrics/"},"publisher":{"@type":"Organization","name":"Blog","logo":{"@type":"ImageObject","url":"https://thomastrinn.github.io/blog/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -92,7 +93,7 @@ Raspberry Pi 3 - Part 7: Server Monitoring Part 3 - Container Metrics
 sorozat folytatásaként most a futó docker containerek erőforrás igényeit
 szeretném kinyerni és megjeleníteni.</p>
 <h1 id=docker-daemon>Docker daemon<a hidden class=anchor aria-hidden=true href=#docker-daemon>#</a></h1>
-<p>Van lehetőség közvetlenül a docker daemon-ből kinyerni metric adatokat,
+<p>Van lehetőség közvetlenül a docker daemon-ból kinyerni metric adatokat,
 a <a href=https://docs.docker.com/config/daemon/prometheus/>hivatalos docker dokumentációban</a>
 találtam leírást hozzá. Jelenleg még fejlesztés alatt van, így csak
 experimental módban lehet használni.</p>
@@ -105,9 +106,9 @@ experimental módban lehet használni.</p>
 <pre tabindex=0><code>sudo systemctl restart docker.service
 </code></pre><p>Ezt követően a docker daemon a 9323-as porton Prometheus kompatibilis
 metric adatokat szolgáltat, ezt a következőképp ellenőrizhetjük:</p>
-<p>Port ellenörzése:</p>
+<p>Port ellenőrzése:</p>
 <pre tabindex=0><code>sudo lsof -i -P -n | grep LISTEN | grep 9323
-</code></pre><p>Metric végpont ellenörzése:</p>
+</code></pre><p>Metric végpont ellenőrzése:</p>
 <pre tabindex=0><code>curl localhost:9323/metrics
 </code></pre><p>Előre elkészített Grafana dashboard-ot nem találtam a docker daemon-hoz,
 illetve a docker daemon által szolgáltatott metric végponton a
@@ -116,7 +117,7 @@ a futó docker container-ekről, azok erőforrás igényéről nem. Így ezt
 nem tudom felhasználni.</p>
 <h1 id=cadvisor>cAdvisor<a hidden class=anchor aria-hidden=true href=#cadvisor>#</a></h1>
 <p>A <a href=https://github.com/google/cadvisor>cAdvisor</a>
-egy igen népszerű eszköz, azonban sajnos arm architekturára
+egy igen népszerű eszköz, azonban sajnos arm architektúrára
 nincs docker image-ük, de vannak nem hivatalos arm buildek, ezek
 közül a <a href=https://hub.docker.com/r/zcube/cadvisor>zcube/cadvisor</a>-t
 választottam.</p>
@@ -140,7 +141,7 @@ választottam.</p>
       - <span style=color:#ae81ff>label=disable</span>
     <span style=color:#f92672>restart</span>: <span style=color:#ae81ff>unless-stopped</span>
 </code></pre></div><p>amely a grafana-stack docker-compose.yml fájlba vettem fel, hogy
-egy docker network-on legyen a stack többi részével.</p>
+egy docker network-ön legyen a stack többi részével.</p>
 <h2 id=cadvisor-metric-adatok-gyűjtése>cAdvisor metric adatok gyűjtése<a hidden class=anchor aria-hidden=true href=#cadvisor-metric-adatok-gyűjtése>#</a></h2>
 <p>Ahhoz, hogy Prometheus elérje a cAdvicser metric végpontját azt a prometheus.yml
 fájlban fel kell venni a <code>scrape_configs</code> rész alá:</p>
@@ -155,8 +156,8 @@ fájlban fel kell venni a <code>scrape_configs</code> rész alá:</p>
 a config fájlt.</p>
 <h2 id=cadvisor-metric-adatok-megjelenítése>cAdvisor metric adatok megjelenítése<a hidden class=anchor aria-hidden=true href=#cadvisor-metric-adatok-megjelenítése>#</a></h2>
 <p>A cAdvisor által szolgáltatott metric adatok, most már Prometheus-ba
-kerülnek, így egy grafana dashcoard-ot is választottam:
-<a href=https://grafana.com/grafana/dashboards/15120>Docker and OS Metrics for Raspberry Piby oijkn</a></p>
+kerülnek, így egy grafana dashboard-ot is választottam:
+<a href=https://grafana.com/grafana/dashboards/15120>Docker and OS Metrics for Raspberry Pi by oijkn</a></p>
 <p>Ez egyben a node exporter adatokból is dolgozik, nemcsak a cAdvisor
 adataiból, így ezt igen praktikusnak találom.</p>
 </div>
