@@ -14,7 +14,7 @@
       
       <guid>https://thomastrinn.github.io/blog/posts/private-and-public-key-authentication/</guid>
       <description>Szerverre ssh-val történő belépéshez felhasználónév és jelszó megadás helyett használhatunk ssh kulcsot is.
-SSH kulcsot generálni az ssh-key programmal tudunk:
+SSH kulcsot generálni az ssh-keygen programmal tudunk:
 ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; -f ~/.ssh/some-name A fenti paranccsal 4096 bit-es RSA kulcsot hozunk létre, a -C kapcsolóval megjegyzést fűzünk a kulcshoz a könnyebb beazonosítás végett, ami lehet az e-mail címünk, de nem kötelező, továbbá az -f kapcsolóval megadjuk a kulcs nevét (nem kötelező megadni, ha nem adjuk meg, akkor generálás közben kéri és van alapértelmezett értéke).</description>
     </item>
     

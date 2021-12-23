@@ -6,7 +6,7 @@
 <title>Private and Public Key Authentication | Blog</title>
 <meta name=keywords content>
 <meta name=description content="Szerverre ssh-val történő belépéshez felhasználónév és jelszó megadás helyett használhatunk ssh kulcsot is.
-SSH kulcsot generálni az ssh-key programmal tudunk:
+SSH kulcsot generálni az ssh-keygen programmal tudunk:
 ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f ~/.ssh/some-name A fenti paranccsal 4096 bit-es RSA kulcsot hozunk létre, a -C kapcsolóval megjegyzést fűzünk a kulcshoz a könnyebb beazonosítás végett, ami lehet az e-mail címünk, de nem kötelező, továbbá az -f kapcsolóval megadjuk a kulcs nevét (nem kötelező megadni, ha nem adjuk meg, akkor generálás közben kéri és van alapértelmezett értéke).">
 <meta name=author content>
 <link rel=canonical href=https://thomastrinn.github.io/blog/posts/private-and-public-key-authentication/>
@@ -25,7 +25,7 @@ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f ~/.ssh/some-nam
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
 </noscript><meta property="og:title" content="Private and Public Key Authentication">
 <meta property="og:description" content="Szerverre ssh-val történő belépéshez felhasználónév és jelszó megadás helyett használhatunk ssh kulcsot is.
-SSH kulcsot generálni az ssh-key programmal tudunk:
+SSH kulcsot generálni az ssh-keygen programmal tudunk:
 ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f ~/.ssh/some-name A fenti paranccsal 4096 bit-es RSA kulcsot hozunk létre, a -C kapcsolóval megjegyzést fűzünk a kulcshoz a könnyebb beazonosítás végett, ami lehet az e-mail címünk, de nem kötelező, továbbá az -f kapcsolóval megadjuk a kulcs nevét (nem kötelező megadni, ha nem adjuk meg, akkor generálás közben kéri és van alapértelmezett értéke).">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://thomastrinn.github.io/blog/posts/private-and-public-key-authentication/"><meta property="article:section" content="posts">
@@ -34,10 +34,10 @@ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f ~/.ssh/some-nam
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="Private and Public Key Authentication">
 <meta name=twitter:description content="Szerverre ssh-val történő belépéshez felhasználónév és jelszó megadás helyett használhatunk ssh kulcsot is.
-SSH kulcsot generálni az ssh-key programmal tudunk:
+SSH kulcsot generálni az ssh-keygen programmal tudunk:
 ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f ~/.ssh/some-name A fenti paranccsal 4096 bit-es RSA kulcsot hozunk létre, a -C kapcsolóval megjegyzést fűzünk a kulcshoz a könnyebb beazonosítás végett, ami lehet az e-mail címünk, de nem kötelező, továbbá az -f kapcsolóval megadjuk a kulcs nevét (nem kötelező megadni, ha nem adjuk meg, akkor generálás közben kéri és van alapértelmezett értéke).">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://thomastrinn.github.io/blog/posts/"},{"@type":"ListItem","position":2,"name":"Private and Public Key Authentication","item":"https://thomastrinn.github.io/blog/posts/private-and-public-key-authentication/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Private and Public Key Authentication","name":"Private and Public Key Authentication","description":"Szerverre ssh-val történő belépéshez felhasználónév és jelszó megadás helyett használhatunk ssh kulcsot is.\nSSH kulcsot generálni az ssh-key programmal tudunk:\nssh-keygen -t rsa -b 4096 -C \u0026quot;your_email@example.com\u0026quot; -f ~/.ssh/some-name A fenti paranccsal 4096 bit-es RSA kulcsot hozunk létre, a -C kapcsolóval megjegyzést fűzünk a kulcshoz a könnyebb beazonosítás végett, ami lehet az e-mail címünk, de nem kötelező, továbbá az -f kapcsolóval megadjuk a kulcs nevét (nem kötelező megadni, ha nem adjuk meg, akkor generálás közben kéri és van alapértelmezett értéke).","keywords":[],"articleBody":"Szerverre ssh-val történő belépéshez felhasználónév és jelszó megadás helyett használhatunk ssh kulcsot is.\nSSH kulcsot generálni az ssh-key programmal tudunk:\nssh-keygen -t rsa -b 4096 -C \"your_email@example.com\" -f ~/.ssh/some-name A fenti paranccsal 4096 bit-es RSA kulcsot hozunk létre, a -C kapcsolóval megjegyzést fűzünk a kulcshoz a könnyebb beazonosítás végett, ami lehet az e-mail címünk, de nem kötelező, továbbá az -f kapcsolóval megadjuk a kulcs nevét (nem kötelező megadni, ha nem adjuk meg, akkor generálás közben kéri és van alapértelmezett értéke). Fontos, hogy a kulcs a felhasználó home könyvtárában levő .ssh könyvtárba kerüljön.\nA generálás során passphrase-t is megadhatunk, de nem kötelező. Ha megadunk, akkor a kulcsot ezen passphrase-val feloldva tudjuk használni.\nA generálás végeztével a felhasználó .ssh könyvtárába két fájl fog megjelenni: az egyik a megadott névvel, ez lesz a private key, a másik a megadott név .pub kiterjesztéssel, ami a public key.\nA public key-t a serverre az ssh-copy-id programmal tudjuk feltenni:\nssh-copy-id -i ~/.ssh/some-name.pub username@remote-server A -i kapcsolóval megadjuk a public key elérését, amit a serverre akarunk másolni.\nEzt követően úgy léphetünk be a serverre, hogy nem kell megadnunk a jelszavunkat, az authentikáció megtörténik a public és a private key segítségével.\nTovábbi részletekért az arch wiki - ssh keys bejegyzést tudom ajánlani.\n","wordCount":"204","inLanguage":"en","datePublished":"2021-12-23T18:49:33+01:00","dateModified":"2021-12-23T18:49:33+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://thomastrinn.github.io/blog/posts/private-and-public-key-authentication/"},"publisher":{"@type":"Organization","name":"Blog","logo":{"@type":"ImageObject","url":"https://thomastrinn.github.io/blog/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Private and Public Key Authentication","name":"Private and Public Key Authentication","description":"Szerverre ssh-val történő belépéshez felhasználónév és jelszó megadás helyett használhatunk ssh kulcsot is.\nSSH kulcsot generálni az ssh-keygen programmal tudunk:\nssh-keygen -t rsa -b 4096 -C \u0026quot;your_email@example.com\u0026quot; -f ~/.ssh/some-name A fenti paranccsal 4096 bit-es RSA kulcsot hozunk létre, a -C kapcsolóval megjegyzést fűzünk a kulcshoz a könnyebb beazonosítás végett, ami lehet az e-mail címünk, de nem kötelező, továbbá az -f kapcsolóval megadjuk a kulcs nevét (nem kötelező megadni, ha nem adjuk meg, akkor generálás közben kéri és van alapértelmezett értéke).","keywords":[],"articleBody":"Szerverre ssh-val történő belépéshez felhasználónév és jelszó megadás helyett használhatunk ssh kulcsot is.\nSSH kulcsot generálni az ssh-keygen programmal tudunk:\nssh-keygen -t rsa -b 4096 -C \"your_email@example.com\" -f ~/.ssh/some-name A fenti paranccsal 4096 bit-es RSA kulcsot hozunk létre, a -C kapcsolóval megjegyzést fűzünk a kulcshoz a könnyebb beazonosítás végett, ami lehet az e-mail címünk, de nem kötelező, továbbá az -f kapcsolóval megadjuk a kulcs nevét (nem kötelező megadni, ha nem adjuk meg, akkor generálás közben kéri és van alapértelmezett értéke). Fontos, hogy a kulcs a felhasználó home könyvtárában levő .ssh könyvtárba kerüljön.\nA generálás során passphrase-t is megadhatunk, de nem kötelező. Ha megadunk, akkor a kulcsot ezen passphrase-el feloldva tudjuk használni.\nA generálás végeztével a felhasználó .ssh könyvtárába két fájl fog megjelenni: az egyik a megadott névvel, ez lesz a private key, a másik a megadott név .pub kiterjesztéssel, ami a public key.\nA public key-t a szerverre az ssh-copy-id programmal tudjuk feltenni:\nssh-copy-id -i ~/.ssh/some-name.pub username@remote-server A -i kapcsolóval megadjuk a public key elérését, amit a szerverre akarunk másolni.\nEzt követően úgy léphetünk be a szerverre, hogy nem kell megadnunk a jelszavunkat, az authentikáció megtörténik a public és a private key segítségével.\nTovábbi részletekért az arch wiki - ssh keys bejegyzést tudom ajánlani.\n","wordCount":"204","inLanguage":"en","datePublished":"2021-12-23T18:49:33+01:00","dateModified":"2021-12-23T18:49:33+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://thomastrinn.github.io/blog/posts/private-and-public-key-authentication/"},"publisher":{"@type":"Organization","name":"Blog","logo":{"@type":"ImageObject","url":"https://thomastrinn.github.io/blog/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -86,7 +86,7 @@ Private and Public Key Authentication
 </header>
 <div class=post-content><p>Szerverre ssh-val történő belépéshez felhasználónév és jelszó megadás helyett
 használhatunk ssh kulcsot is.</p>
-<p>SSH kulcsot generálni az <code>ssh-key</code> programmal tudunk:</p>
+<p>SSH kulcsot generálni az <code>ssh-keygen</code> programmal tudunk:</p>
 <pre tabindex=0><code>ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; -f ~/.ssh/some-name
 </code></pre><p>A fenti paranccsal 4096 bit-es RSA kulcsot hozunk létre, a <code>-C</code> kapcsolóval
 megjegyzést fűzünk a kulcshoz a könnyebb beazonosítás végett, ami lehet
@@ -95,14 +95,14 @@ a kulcs nevét (nem kötelező megadni, ha nem adjuk meg, akkor
 generálás közben kéri és van alapértelmezett értéke). Fontos, hogy a kulcs
 a felhasználó home könyvtárában levő .ssh könyvtárba kerüljön.</p>
 <p>A generálás során passphrase-t is megadhatunk, de nem kötelező. Ha megadunk,
-akkor a kulcsot ezen passphrase-val feloldva tudjuk használni.</p>
+akkor a kulcsot ezen passphrase-el feloldva tudjuk használni.</p>
 <p>A generálás végeztével a felhasználó .ssh könyvtárába két fájl fog megjelenni:
 az egyik a megadott névvel, ez lesz a private key, a másik a megadott név
 .pub kiterjesztéssel, ami a public key.</p>
-<p>A public key-t a serverre az <code>ssh-copy-id</code> programmal tudjuk feltenni:</p>
+<p>A public key-t a szerverre az <code>ssh-copy-id</code> programmal tudjuk feltenni:</p>
 <pre tabindex=0><code>ssh-copy-id -i ~/.ssh/some-name.pub username@remote-server
-</code></pre><p>A <code>-i</code> kapcsolóval megadjuk a public key elérését, amit a serverre akarunk másolni.</p>
-<p>Ezt követően úgy léphetünk be a serverre, hogy nem kell megadnunk a jelszavunkat,
+</code></pre><p>A <code>-i</code> kapcsolóval megadjuk a public key elérését, amit a szerverre akarunk másolni.</p>
+<p>Ezt követően úgy léphetünk be a szerverre, hogy nem kell megadnunk a jelszavunkat,
 az authentikáció megtörténik a public és a private key segítségével.</p>
 <p>További részletekért az
 <a href=https://wiki.archlinux.org/title/SSH_keys>arch wiki - ssh keys</a> bejegyzést
