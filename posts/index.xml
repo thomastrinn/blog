@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Dec 2021 12:27:41 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Dec 2021 18:49:33 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Private and Public Key Authentication</title>
+      <link>https://thomastrinn.github.io/blog/posts/private-and-public-key-authentication/</link>
+      <pubDate>Thu, 23 Dec 2021 18:49:33 +0100</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/private-and-public-key-authentication/</guid>
+      <description>Szerverre ssh-val történő belépéshez felhasználónév és jelszó megadás helyett használhatunk ssh kulcsot is.
+SSH kulcsot generálni az ssh-key programmal tudunk:
+ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; -f ~/.ssh/some-name A fenti paranccsal 4096 bit-es RSA kulcsot hozunk létre, a -C kapcsolóval megjegyzést fűzünk a kulcshoz a könnyebb beazonosítás végett, ami lehet az e-mail címünk, de nem kötelező, továbbá az -f kapcsolóval megadjuk a kulcs nevét (nem kötelező megadni, ha nem adjuk meg, akkor generálás közben kéri és van alapértelmezett értéke).</description>
+    </item>
+    
     <item>
       <title>Raspberry Pi 3 - Part 10 Server Monitoring Part 6 - Grafana Alerts</title>
       <link>https://thomastrinn.github.io/blog/posts/pi3-server-part-10-server-monitoring-part-06-grafana-alerts/</link>
