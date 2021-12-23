@@ -3,21 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://thomastrinn.github.io/blog/</loc>
-    <lastmod>2021-12-05T16:23:52+01:00</lastmod>
+    <lastmod>2021-12-23T12:27:41+01:00</lastmod>
   </url><url>
     <loc>https://thomastrinn.github.io/blog/posts/</loc>
-    <lastmod>2021-12-05T16:23:52+01:00</lastmod>
+    <lastmod>2021-12-23T12:27:41+01:00</lastmod>
   </url><url>
-    <loc>https://thomastrinn.github.io/blog/posts/pi3-server-part-09-server-monitoring-part-05-container-logs/</loc>
-    <lastmod>2021-12-05T16:23:52+01:00</lastmod>
+    <loc>https://thomastrinn.github.io/blog/posts/pi3-server-part-10-server-monitoring-part-06-grafana-alerts/</loc>
+    <lastmod>2021-12-23T12:27:41+01:00</lastmod>
   </url><url>
     <loc>https://thomastrinn.github.io/blog/series/raspberry-pi-3-server/</loc>
-    <lastmod>2021-12-05T16:23:52+01:00</lastmod>
+    <lastmod>2021-12-23T12:27:41+01:00</lastmod>
   </url><url>
     <loc>https://thomastrinn.github.io/blog/series/raspberry-pi-3-server-monitoring/</loc>
-    <lastmod>2021-12-05T16:23:52+01:00</lastmod>
+    <lastmod>2021-12-23T12:27:41+01:00</lastmod>
   </url><url>
     <loc>https://thomastrinn.github.io/blog/series/</loc>
+    <lastmod>2021-12-23T12:27:41+01:00</lastmod>
+  </url><url>
+    <loc>https://thomastrinn.github.io/blog/posts/pi3-server-part-09-server-monitoring-part-05-container-logs/</loc>
     <lastmod>2021-12-05T16:23:52+01:00</lastmod>
   </url><url>
     <loc>https://thomastrinn.github.io/blog/posts/pi3-server-part-08-server-monitoring-part-04-system-logs/</loc>

@@ -6,7 +6,18 @@
     <description>Recent content on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Dec 2021 16:23:52 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Dec 2021 12:27:41 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raspberry Pi 3 - Part 10 Server Monitoring Part 6 - Grafana Alerts</title>
+      <link>https://thomastrinn.github.io/blog/posts/pi3-server-part-10-server-monitoring-part-06-grafana-alerts/</link>
+      <pubDate>Thu, 23 Dec 2021 12:27:41 +0100</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/pi3-server-part-10-server-monitoring-part-06-grafana-alerts/</guid>
+      <description>Riasztások segítségével értesülhetünk arról, ha valami probléma lépett fel a rendszerünkben.
+A Grafana lehetőséget biztosít riasztások létrehozására. A hivatalos dokumentáció segítségével könnyedén létre tudtam hozni riasztásokat. Úgynevezett alert rule-t kell definiálni, ami áll egy query-ből, ami meghatározza azt az értéket, amit figyelni kívánunk és áll egy condition-ből, amiben a feltételt határozhatjuk meg a riasztáshoz.
+Ahhoz, hogy a riasztásról értesülhessek a Gotify message server-t használtam. Ez biztosít egy web-es felületet a message-ek megjelenítésére, illetve van android alkalmazás is hozzá.</description>
+    </item>
+    
     <item>
       <title>Raspberry Pi 3 - Part 9: Server Monitoring Part 5 - Container Logs</title>
       <link>https://thomastrinn.github.io/blog/posts/pi3-server-part-09-server-monitoring-part-05-container-logs/</link>
