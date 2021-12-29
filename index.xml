@@ -6,7 +6,20 @@
     <description>Recent content on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Dec 2021 13:49:18 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Dec 2021 08:57:06 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create a Blog With Hugo and Hosting on GitHub Pages</title>
+      <link>https://thomastrinn.github.io/blog/posts/create-a-blog-with-hugo-and-hosting-on-github-pages/</link>
+      <pubDate>Tue, 28 Dec 2021 08:57:06 +0100</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/create-a-blog-with-hugo-and-hosting-on-github-pages/</guid>
+      <description>Jelen bejegyzésben megmutatom, hogyan hoztam létre ezt a blog oldalt.
+Áttekintés Az oldalt a Hugo nevű statikus oldal generálóval készítem, publikusan elérhetővé pedig a GitHub Pages segítségével teszem.
+GitHub-on két repository-t készítettem, az egyik tartalmazza az oldal forráskódját és a tartalmakat, a másik pedig a generált oldalt.
+Blog létrehozása Hugo-val Hugo telepítése A telepítés igen egyszerű, a hivatalos útmutató alapján bármilyen operációs rendszerre fel tudjuk telepíteni.
+Blog oldal létrehozása A blog oldal létrehozása a hugo programmal:</description>
+    </item>
+    
     <item>
       <title>Using Zram With Raspberry Pi</title>
       <link>https://thomastrinn.github.io/blog/posts/using-zram-with-raspberry-pi/</link>
