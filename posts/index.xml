@@ -6,7 +6,30 @@
     <description>Recent content in Posts on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Dec 2021 08:57:06 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Dec 2021 18:23:02 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create a Multi-ISO Bootable Flash Drive</title>
+      <link>https://thomastrinn.github.io/blog/posts/create-a-multi-iso-bootable-flash-drive/</link>
+      <pubDate>Thu, 30 Dec 2021 18:23:02 +0100</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/create-a-multi-iso-bootable-flash-drive/</guid>
+      <description>A Ventoy egy open source eszköz, amely segítségével boot-olható USB drive-ot készíthetünk ISO/WIM/IMG/VHD(x)/EFI fájlok számára.
+Ventoy használata  Töltsük le vagy telepítsük a Ventoy programot. A ventoygui alkalmazás indítása után egy egyszerű felülettel találkozunk:  kiválaszthatjuk az eszközt, amelyre fel kívánjuk telepíteni megadhatjuk, hogy MBR vagy GPT partíciós stílust akarunk-e használni megadhatjuk, a ventoy partíció méretét.   A beállítások után telepíthetjük a ventoy-t, vagy ha már korábban telepítettük, akkor frissíthetjük.</description>
+    </item>
+    
+    <item>
+      <title>Encrypted Data Storage</title>
+      <link>https://thomastrinn.github.io/blog/posts/encrypted-data-storage/</link>
+      <pubDate>Thu, 30 Dec 2021 17:23:46 +0100</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/encrypted-data-storage/</guid>
+      <description>Olyan open source szoftvereket gyűjtöttem össze, amelyek fájl titkosítást tesznek lehetővé, illetve cloud szolgáltatás esetén end-to-end encryption-t támogatnak.
+7-Zip A 7-Zip egy fájl arhiváló, amely jelszóval védett archív fájl létrehozását is lehetővé teszi.
+Hat.sh A Hat.sh egy webes alkalmazás, amely a böngészőben fájl titkosítást tesz lehetővé.
+LUKS - Linux Unified Key Setup A LUKS segítségével titkosított partíciót hozhatunk létre.
+VeraCrypt A VeraCrypt egy disk encryption alkalmazás, amely képes meglevő partíciót titkosítani, illetve virtuális titkosított meghajtót létrehozni.</description>
+    </item>
+    
     <item>
       <title>Create a Blog With Hugo and Hosting on GitHub Pages</title>
       <link>https://thomastrinn.github.io/blog/posts/create-a-blog-with-hugo-and-hosting-on-github-pages/</link>
