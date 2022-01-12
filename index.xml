@@ -6,7 +6,17 @@
     <description>Recent content on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Dec 2021 18:23:02 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Jan 2022 17:04:32 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magic Wormhole: Secure File Transfer</title>
+      <link>https://thomastrinn.github.io/blog/posts/magic-wormhole-secure-file-transfer/</link>
+      <pubDate>Wed, 12 Jan 2022 17:04:32 +0100</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/magic-wormhole-secure-file-transfer/</guid>
+      <description>The notion of a “magic wormhole” comes from the image of two distant wizards speaking the same enchanted phrase at the same time, and causing a mystical connection to pop into existence between them. The wizards then throw books into the wormhole and they fall out the other side. Transferring files securely should be that easy. &amp;ndash; magic-worhole official website
+ A wormhole lehetővé teszi tetszőleges méretű fájlok és könyvtárak (vagy rövid szövegrészek) átjutását egyik számítógépről a másikra.</description>
+    </item>
+    
     <item>
       <title>Create a Multi-ISO Bootable Flash Drive</title>
       <link>https://thomastrinn.github.io/blog/posts/create-a-multi-iso-bootable-flash-drive/</link>
