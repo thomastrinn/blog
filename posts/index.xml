@@ -6,7 +6,24 @@
     <description>Recent content in Posts on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Jan 2022 17:04:32 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Feb 2022 17:23:30 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First Mini Home Lab Server - The Metal</title>
+      <link>https://thomastrinn.github.io/blog/posts/first-mini-home-lab-server-metal/</link>
+      <pubDate>Wed, 09 Feb 2022 17:23:30 +0100</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/first-mini-home-lab-server-metal/</guid>
+      <description>Hosszas fontolgatás után úgy döntöttem eljött az ideje a Raspberry Pi mini számítógép kalandozásaim után, hogy egy erősebb hardware-t keressek, amit Home Lab Server-nek használhatok.
+Elvárások:
+  Kicsi, kompakt számítógép ház
+  Csendes
+  M.2 NVMe SSD támogatás
+  2,5&#39;&#39;&#39; HDD elférjen a számítógép házban
+  Több magos CPU
+  Jó teljesítmény, alacsony fogyasztás
+  Egy hosszas kutakodást követően a Minisforum UM340 Mini PC-re esett a választásom.</description>
+    </item>
+    
     <item>
       <title>Magic Wormhole: Secure File Transfer</title>
       <link>https://thomastrinn.github.io/blog/posts/magic-wormhole-secure-file-transfer/</link>

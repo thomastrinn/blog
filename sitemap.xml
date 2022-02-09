@@ -3,12 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://thomastrinn.github.io/blog/</loc>
-    <lastmod>2022-01-12T17:04:32+01:00</lastmod>
+    <lastmod>2022-02-09T17:23:30+01:00</lastmod>
   </url><url>
-    <loc>https://thomastrinn.github.io/blog/posts/magic-wormhole-secure-file-transfer/</loc>
-    <lastmod>2022-01-12T17:04:32+01:00</lastmod>
+    <loc>https://thomastrinn.github.io/blog/posts/first-mini-home-lab-server-metal/</loc>
+    <lastmod>2022-02-09T17:23:30+01:00</lastmod>
   </url><url>
     <loc>https://thomastrinn.github.io/blog/posts/</loc>
+    <lastmod>2022-02-09T17:23:30+01:00</lastmod>
+  </url><url>
+    <loc>https://thomastrinn.github.io/blog/posts/magic-wormhole-secure-file-transfer/</loc>
     <lastmod>2022-01-12T17:04:32+01:00</lastmod>
   </url><url>
     <loc>https://thomastrinn.github.io/blog/posts/create-a-multi-iso-bootable-flash-drive/</loc>
