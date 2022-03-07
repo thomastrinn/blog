@@ -6,7 +6,22 @@
     <description>Recent content on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Mar 2022 18:15:00 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Mar 2022 19:52:44 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Set Up File Server With Samba</title>
+      <link>https://thomastrinn.github.io/blog/posts/set-up-file-server-with-samba/</link>
+      <pubDate>Mon, 07 Mar 2022 19:52:44 +0100</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/set-up-file-server-with-samba/</guid>
+      <description>A Samba segítségével fájl megosztást lehet lehetővé tenni Linux, Windows és MacOS operációs rendszerek számára.
+Meglepetésemre a telepítés és beállítás sokkal egyszerűbb volt, mint gondoltam.
+Az ubuntu oldalán található két leírás nagy segítséget adott:
+  Tutorial: Install and Configure Samba
+  Server - Docs: File Server
+  Nincs más teendő, mint telepíteni a samba csomagot:
+sudo apt install samba A beállításokat pedig az /etc/samba/smb.conf fájlban tehetjük meg.</description>
+    </item>
+    
     <item>
       <title>Home Lab Server Setup</title>
       <link>https://thomastrinn.github.io/blog/posts/home-lab-server-setup/</link>
