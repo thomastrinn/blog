@@ -6,7 +6,20 @@
     <description>Recent content in Posts on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Mar 2022 19:52:44 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Mar 2022 18:47:37 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simplepush</title>
+      <link>https://thomastrinn.github.io/blog/posts/simplepush/</link>
+      <pubDate>Tue, 08 Mar 2022 18:47:37 +0100</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/simplepush/</guid>
+      <description>Hosszan kerestem egy olyan ingyenes szolgáltatást, ami egyszerű módon lehetővé teszi számomra, hogy push értesítéseket küldhessek okos telefonomra.
+A célom ezzel, hogy a home-lab server-em tudjon fontos eseményekről jelzést küldeni számomra.
+A szolgáltatás amit találtam a Simplepush. Ingyenesen limitált 100 push értesítés küldésre havonta, de ez nekem elegendő is.
+A szolgáltatás mellet ingyenesen android és ios alkalmazást is adnak.
+Értesítés küldése POST request-vel történik, így curl paranccsal is elvégezhető, részletek az api dokumentációjában találhatók.</description>
+    </item>
+    
     <item>
       <title>Set Up File Server With Samba</title>
       <link>https://thomastrinn.github.io/blog/posts/set-up-file-server-with-samba/</link>
