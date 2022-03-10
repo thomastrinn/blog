@@ -6,7 +6,19 @@
     <description>Recent content on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Mar 2022 18:47:37 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Mar 2022 16:30:23 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker Image Update Notifier</title>
+      <link>https://thomastrinn.github.io/blog/posts/diun/</link>
+      <pubDate>Thu, 10 Mar 2022 16:30:23 +0100</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/diun/</guid>
+      <description>A Diun - Docker Image Update Notifier, ahogy neve is sugallja, értesít bennünk arról, ha van újabb verziójú docker image.
+Telepítés docker image-gel A diun-t úgy állítottam be, hogy minden használatban lévő docker image-emet figyelje és 6 óránként ellenőrizze, hogy vannak-e újabb verziójúak. Értesítés küldésre egy saját script-et írtam, ami a Simplepush-on keresztül küld értesítést az okos telefonomra.
+Az docker-compose.yml fájl a diun service-szel:
+version: &amp;#34;3.8&amp;#34; services: diun: image: crazymax/diun:latest container_name: diun restart: always command: serve volumes: - &amp;#34;.</description>
+    </item>
+    
     <item>
       <title>Simplepush</title>
       <link>https://thomastrinn.github.io/blog/posts/simplepush/</link>
