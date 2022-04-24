@@ -38,7 +38,7 @@ Ahhoz, hogy a riasztásról értesülhessek a Gotify message server-t használta
 Docker container logok gyűjtése A container logok helye: /var/lib/docker/&amp;lt;container-id&amp;gt;/&amp;lt;container-id&amp;gt;-json.log
 Ahol a &amp;lt;container-id&amp;gt; a docker container-ek egyedi azonosítója.
 A docker container logok gyűjtéséhez a Promtail service számára a /var/lib/docker könyvtárat kell volume-ként becsatolni:
-promtail: image: grafana/promtail:latest container_name: promtail command: -config.file=/etc/promtail/config.yml volumes: - ./promtail/promtail-config.yml:/etc/promtail/config.yml - /var/log:/var/log:ro - /var/lib/docker/:/var/lib/docker:ro restart: unless-stopped Így a promtail container eléri a host docker log-jait és most már be tudjuk állítani, hogy a promtail a /var/lib/docker/containers/*/*log fájlokat figyelve a logokat elküldje a Loki-nak.</description>
+ promtail:  image: grafana/promtail:latest  container_name: promtail  command: -config.file=/etc/promtail/config.yml  volumes:  - ./promtail/promtail-config.yml:/etc/promtail/config.yml  - /var/log:/var/log:ro  - /var/lib/docker/:/var/lib/docker:ro  restart: unless-stopped Így a promtail container eléri a host docker log-jait és most már be tudjuk állítani, hogy a promtail a /var/lib/docker/containers/*/*log fájlokat figyelve a logokat elküldje a Loki-nak.</description>
     </item>
     
     <item>
@@ -49,7 +49,7 @@ promtail: image: grafana/promtail:latest container_name: promtail command: -conf
       <guid>https://thomastrinn.github.io/blog/posts/pi3-server-part-08-server-monitoring-part-04-system-logs/</guid>
       <description>A Server Monitoring sorozat folytatásaként most a linux host system log gyűjtésével és megjelenítésével foglalkozom.
 System log gyűjtése A system log gyűjtéséhez a Promtail service számára a linux host /var/log könyvtárát kell volume-ként becsatolni. Az eredeti docker-compose promtail service ezzel kiegészítve az alábbi:
-promtail: image: grafana/promtail:latest container_name: promtail command: -config.file=/etc/promtail/config.yml volumes: - ./promtail/promtail-config.yml:/etc/promtail/config.yml - /var/log:/var/log:ro restart: unless-stopped Így a promtail container eléri a host system log-jait és most már be tudjuk állítani, hogy a promtail a /var/log könyvtárat figyelve a logokat elküldje a Loki-nak.</description>
+ promtail:  image: grafana/promtail:latest  container_name: promtail  command: -config.file=/etc/promtail/config.yml  volumes:  - ./promtail/promtail-config.yml:/etc/promtail/config.yml  - /var/log:/var/log:ro  restart: unless-stopped Így a promtail container eléri a host system log-jait és most már be tudjuk állítani, hogy a promtail a /var/log könyvtárat figyelve a logokat elküldje a Loki-nak.</description>
     </item>
     
     <item>
@@ -61,7 +61,7 @@ promtail: image: grafana/promtail:latest container_name: promtail command: -conf
       <description>A Server Monitoring sorozat folytatásaként most a futó docker containerek erőforrás igényeit szeretném kinyerni és megjeleníteni.
 Docker daemon Van lehetőség közvetlenül a docker daemon-ból kinyerni metric adatokat, a hivatalos docker dokumentációban találtam leírást hozzá. Jelenleg még fejlesztés alatt van, így csak experimental módban lehet használni.
 A /etc/docker/daemon.json fájlban adható meg a metric végpont engedélyezése:
-{ &amp;#34;metrics-addr&amp;#34; : &amp;#34;127.0.0.1:9323&amp;#34;, &amp;#34;experimental&amp;#34; : true } Ahhoz, hogy érvényesüljön a beállítás újra kell indítani a docker daemon-t:</description>
+{  &amp;#34;metrics-addr&amp;#34; : &amp;#34;127.0.0.1:9323&amp;#34;,  &amp;#34;experimental&amp;#34; : true } Ahhoz, hogy érvényesüljön a beállítás újra kell indítani a docker daemon-t:</description>
     </item>
     
     <item>
@@ -73,7 +73,7 @@ A /etc/docker/daemon.json fájlban adható meg a metric végpont engedélyezése
       <description>A Server Monitoring sorozat folytatásaként most a hardware és os metric adatok gyűjtésével és megjelenítésével foglalkozom.
 System metric adatok elérése A Prometheus egyik hivatalos metric exporter-je a Node exporter , amely pont megfelel céljaim számára.
 A node exporter futtatható docker container-ként és docker-compose service-ként az alábbi módon hoztam létre:
-node_exporter: image: quay.io/prometheus/node-exporter:latest container_name: node_exporter command: --path.rootfs=/host pid: host ports: - &amp;#34;9100:9100&amp;#34; volumes: - /:/host:ro,rslave restart: unless-stopped amelyet a grafana-stack docker-compose.yml fájlba vettem fel, hogy egy docker network-on legyen a stack többi részével.</description>
+ node_exporter:  image: quay.io/prometheus/node-exporter:latest  container_name: node_exporter  command: --path.rootfs=/host  pid: host  ports:  - &amp;#34;9100:9100&amp;#34;  volumes:  - /:/host:ro,rslave  restart: unless-stopped amelyet a grafana-stack docker-compose.</description>
     </item>
     
     <item>
@@ -120,8 +120,8 @@ Docker telepítése Követve a hivatalos dokumentációt Raspbian esetén a conv
       <description>Debian alapú rendszerek esetén az unattended-upgrades csomag biztosít lehetőséget update-ek automatikus futtatására.
 Telepítés sudo apt-get install unattended-upgrades apt-listchanges -y Beállítások Az unattended-upgrades beállításait az /etc/apt/apt.conf.d/50unattended-upgrades fájl tartalmazza.
 Lehetőségünk van beállítani az automatikus újraindítást, ha az update után az szükséges:
-Unattended-Upgrade::Automatic-Reboot &amp;quot;true&amp;quot;; Unattended-Upgrade::Automatic-Reboot-Time &amp;quot;03:00&amp;quot;; Továbbá lehetőségünk van e-mail értesítést is küldeni az alábbi két sorral:
-Unattended-Upgrade::Mail &amp;quot;user@example.com&amp;quot;; Unattended-Upgrade::MailReport &amp;quot;on-change&amp;quot;; De ez csak akkor fog működni, ha a rendszer tud e-mail-t küldeni, ehhez pedig egy olyan tool-ra van szükségünk, ami a mailx package-t támogatja.</description>
+Unattended-Upgrade::Automatic-Reboot &amp;#34;true&amp;#34;; Unattended-Upgrade::Automatic-Reboot-Time &amp;#34;03:00&amp;#34;; Továbbá lehetőségünk van e-mail értesítést is küldeni az alábbi két sorral:
+Unattended-Upgrade::Mail &amp;#34;user@example.com&amp;#34;; Unattended-Upgrade::MailReport &amp;#34;on-change&amp;#34;; De ez csak akkor fog működni, ha a rendszer tud e-mail-t küldeni, ehhez pedig egy olyan tool-ra van szükségünk, ami a mailx package-t támogatja.</description>
     </item>
     
     <item>

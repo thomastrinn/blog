@@ -6,7 +6,53 @@
     <description>Recent content in Posts on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Mar 2022 19:47:52 +0100</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Apr 2022 09:23:22 +0200</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Home Lab Server: choose OS 2.0</title>
+      <link>https://thomastrinn.github.io/blog/posts/home-lab-server-setup-2/</link>
+      <pubDate>Sun, 24 Apr 2022 09:23:22 +0200</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/home-lab-server-setup-2/</guid>
+      <description>Az év elején vágtam bele a home lab server projektbe és operációs rendszernek az Ubuntu Server-t választottam. A döntésről és beállításokról írt bejegyzésemben többek közt több lehetséges operációs rendszert is felsoroltam, amelyen elgondolkoztam, hogy használhatnám, de az ubuntu popularitása és egyszerű telepítése miatt végül azokat elvetettem.
+Néhány hónap elteltével azonban elkezdett motoszkálni a fejemben, hogy nekem tényleg szükségem van-e az ubuntura, kell-e nekem a sok csomag amivel jön, kell-e nekem a fix verzió, kell-e nekem a régebbi kernel (és nem egy újabb).</description>
+    </item>
+    
+    <item>
+      <title>Swap</title>
+      <link>https://thomastrinn.github.io/blog/posts/swap/</link>
+      <pubDate>Sat, 23 Apr 2022 15:29:52 +0200</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/swap/</guid>
+      <description>Szükség van-e swap-ra? Erre a kérdésre kerestem a választ és találtam egy jó cikket, amely ezt a témát járja körbe: Linux Performance: Why You Should Almost Always Add Swap Space
+Az alábbiakban leírom, hogyan tudunk swap fájlt létrehozni és milyen finomhangolási lehetőségeink vannak.
+Swap fájl létrehozása és használata   Swapfájl létrehozása. Például 512 mb-os swapfájl létrehozása:
+sudo dd if=/dev/zero of=/swapfile bs=1M count=512 status=progress A dd a coreutils GNU csomag része.</description>
+    </item>
+    
+    <item>
+      <title>Mounting a File System</title>
+      <link>https://thomastrinn.github.io/blog/posts/mounting-a-file-system/</link>
+      <pubDate>Fri, 22 Apr 2022 11:30:44 +0100</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/mounting-a-file-system/</guid>
+      <description>Linux és UNIX operációs rendszerek esetén a mount parancs segítségével csatolhatunk fel fájlrendszereket. A felcsatolás helyét mount point-nak nevezik és a könyvtár struktúra egy tetszőlegesen választott helye.
+Az unmount parancs segítségével pedig lecsatolható az adott fájlrendszer.
+Fájlrendszer csatolása Az elérhető eszközök listázására használhatjuk az fdisk parancsot:
+sudo fdisk -l Ezzel részletes információkat kapunk az eszközökről és a partíciókról, illetve milyen fájlrendszerűek a partíciók.
+Adott fájlrendszer csatolásának módja a mount paranccsal:</description>
+    </item>
+    
+    <item>
+      <title>Simplify Remote Access with custom SSH Connection Configs</title>
+      <link>https://thomastrinn.github.io/blog/posts/simplify-remote-access-with-custom-ssh-connection-configs/</link>
+      <pubDate>Thu, 21 Apr 2022 11:29:03 +0200</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/simplify-remote-access-with-custom-ssh-connection-configs/</guid>
+      <description>A korábbi SSH túl sok autentikációs próbák hiba bejegyzést követően tudomást szereztem, arról, hogy egy kapcsolódáshoz tartozó speciális beállításokat egy config fájlban is meg lehet adni, ami nagyban megkönnyíti a dolgomat, mert nem kell megjegyeznem a beállításokat.
+OpenSSH client-side configuration file: ~/.ssh/config Alap esetben az SSH config fájl nem feltétlenül létezik, ezért létre kell hozni, úgy hogy csak az adott felhasználó írhassa és olvashassa:
+touch ~/.ssh/config &amp;amp;&amp;amp; chmod 600 ~/.ssh/config A fájl struktúrája:</description>
+    </item>
+    
     <item>
       <title>SSH returns &#39;Too Many Authentication Failures&#39; error</title>
       <link>https://thomastrinn.github.io/blog/posts/ssh-too-many-authentication-failures/</link>
@@ -27,7 +73,7 @@ ssh username@&amp;lt;server&amp;gt; Megnéztem a -v és -vvv kapcsolók segíts�
       <description>A Diun - Docker Image Update Notifier, ahogy neve is sugallja, értesít bennünk arról, ha van újabb verziójú docker image.
 Telepítés docker image-gel A diun-t úgy állítottam be, hogy minden használatban lévő docker image-emet figyelje és 6 óránként ellenőrizze, hogy vannak-e újabb verziójúak. Értesítés küldésre egy saját script-et írtam, ami a Simplepush-on keresztül küld értesítést az okos telefonomra.
 Az docker-compose.yml fájl a diun service-szel:
-version: &amp;#34;3.8&amp;#34; services: diun: image: crazymax/diun:latest container_name: diun restart: always command: serve volumes: - &amp;#34;.</description>
+version: &amp;#34;3.8&amp;#34;  services:  diun:  image: crazymax/diun:latest  container_name: diun  restart: always  command: serve  volumes:  - &amp;#34;.</description>
     </item>
     
     <item>
@@ -82,7 +128,7 @@ Elvárások:
   Kicsi, kompakt számítógép ház
   Csendes
   M.2 NVMe SSD támogatás
-  2,5&#39;&#39;&#39; HDD elférjen a számítógép házban
+  2,5&amp;rsquo;&amp;rsquo;&amp;rsquo; HDD elférjen a számítógép házban
   Több magos CPU
   Jó teljesítmény, alacsony fogyasztás
   Egy hosszas kutakodást követően a Minisforum UM340 Mini PC-re esett a választásom.</description>
@@ -152,7 +198,7 @@ Mi is az a zram?  zram, formerly called compcache, is a Linux kernel module for 
       <guid>https://thomastrinn.github.io/blog/posts/private-and-public-key-authentication/</guid>
       <description>Szerverre ssh-val történő belépéshez felhasználónév és jelszó megadás helyett használhatunk ssh kulcsot is.
 SSH kulcsot generálni az ssh-keygen programmal tudunk:
-ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; -f ~/.ssh/some-name A fenti paranccsal 4096 bit-es RSA kulcsot hozunk létre, a -C kapcsolóval megjegyzést fűzünk a kulcshoz a könnyebb beazonosítás végett, ami lehet az e-mail címünk, de nem kötelező, továbbá az -f kapcsolóval megadjuk a kulcs nevét (nem kötelező megadni, ha nem adjuk meg, akkor generálás közben kéri és van alapértelmezett értéke).</description>
+ssh-keygen -t rsa -b 4096 -C &amp;#34;your_email@example.com&amp;#34; -f ~/.ssh/some-name A fenti paranccsal 4096 bit-es RSA kulcsot hozunk létre, a -C kapcsolóval megjegyzést fűzünk a kulcshoz a könnyebb beazonosítás végett, ami lehet az e-mail címünk, de nem kötelező, továbbá az -f kapcsolóval megadjuk a kulcs nevét (nem kötelező megadni, ha nem adjuk meg, akkor generálás közben kéri és van alapértelmezett értéke).</description>
     </item>
     
     <item>
@@ -176,7 +222,7 @@ Ahhoz, hogy a riasztásról értesülhessek a Gotify message server-t használta
 Docker container logok gyűjtése A container logok helye: /var/lib/docker/&amp;lt;container-id&amp;gt;/&amp;lt;container-id&amp;gt;-json.log
 Ahol a &amp;lt;container-id&amp;gt; a docker container-ek egyedi azonosítója.
 A docker container logok gyűjtéséhez a Promtail service számára a /var/lib/docker könyvtárat kell volume-ként becsatolni:
-promtail: image: grafana/promtail:latest container_name: promtail command: -config.file=/etc/promtail/config.yml volumes: - ./promtail/promtail-config.yml:/etc/promtail/config.yml - /var/log:/var/log:ro - /var/lib/docker/:/var/lib/docker:ro restart: unless-stopped Így a promtail container eléri a host docker log-jait és most már be tudjuk állítani, hogy a promtail a /var/lib/docker/containers/*/*log fájlokat figyelve a logokat elküldje a Loki-nak.</description>
+ promtail:  image: grafana/promtail:latest  container_name: promtail  command: -config.file=/etc/promtail/config.yml  volumes:  - ./promtail/promtail-config.yml:/etc/promtail/config.yml  - /var/log:/var/log:ro  - /var/lib/docker/:/var/lib/docker:ro  restart: unless-stopped Így a promtail container eléri a host docker log-jait és most már be tudjuk állítani, hogy a promtail a /var/lib/docker/containers/*/*log fájlokat figyelve a logokat elküldje a Loki-nak.</description>
     </item>
     
     <item>
@@ -187,7 +233,7 @@ promtail: image: grafana/promtail:latest container_name: promtail command: -conf
       <guid>https://thomastrinn.github.io/blog/posts/pi3-server-part-08-server-monitoring-part-04-system-logs/</guid>
       <description>A Server Monitoring sorozat folytatásaként most a linux host system log gyűjtésével és megjelenítésével foglalkozom.
 System log gyűjtése A system log gyűjtéséhez a Promtail service számára a linux host /var/log könyvtárát kell volume-ként becsatolni. Az eredeti docker-compose promtail service ezzel kiegészítve az alábbi:
-promtail: image: grafana/promtail:latest container_name: promtail command: -config.file=/etc/promtail/config.yml volumes: - ./promtail/promtail-config.yml:/etc/promtail/config.yml - /var/log:/var/log:ro restart: unless-stopped Így a promtail container eléri a host system log-jait és most már be tudjuk állítani, hogy a promtail a /var/log könyvtárat figyelve a logokat elküldje a Loki-nak.</description>
+ promtail:  image: grafana/promtail:latest  container_name: promtail  command: -config.file=/etc/promtail/config.yml  volumes:  - ./promtail/promtail-config.yml:/etc/promtail/config.yml  - /var/log:/var/log:ro  restart: unless-stopped Így a promtail container eléri a host system log-jait és most már be tudjuk állítani, hogy a promtail a /var/log könyvtárat figyelve a logokat elküldje a Loki-nak.</description>
     </item>
     
     <item>
@@ -199,7 +245,7 @@ promtail: image: grafana/promtail:latest container_name: promtail command: -conf
       <description>A Server Monitoring sorozat folytatásaként most a futó docker containerek erőforrás igényeit szeretném kinyerni és megjeleníteni.
 Docker daemon Van lehetőség közvetlenül a docker daemon-ból kinyerni metric adatokat, a hivatalos docker dokumentációban találtam leírást hozzá. Jelenleg még fejlesztés alatt van, így csak experimental módban lehet használni.
 A /etc/docker/daemon.json fájlban adható meg a metric végpont engedélyezése:
-{ &amp;#34;metrics-addr&amp;#34; : &amp;#34;127.0.0.1:9323&amp;#34;, &amp;#34;experimental&amp;#34; : true } Ahhoz, hogy érvényesüljön a beállítás újra kell indítani a docker daemon-t:</description>
+{  &amp;#34;metrics-addr&amp;#34; : &amp;#34;127.0.0.1:9323&amp;#34;,  &amp;#34;experimental&amp;#34; : true } Ahhoz, hogy érvényesüljön a beállítás újra kell indítani a docker daemon-t:</description>
     </item>
     
     <item>
@@ -211,7 +257,7 @@ A /etc/docker/daemon.json fájlban adható meg a metric végpont engedélyezése
       <description>A Server Monitoring sorozat folytatásaként most a hardware és os metric adatok gyűjtésével és megjelenítésével foglalkozom.
 System metric adatok elérése A Prometheus egyik hivatalos metric exporter-je a Node exporter , amely pont megfelel céljaim számára.
 A node exporter futtatható docker container-ként és docker-compose service-ként az alábbi módon hoztam létre:
-node_exporter: image: quay.io/prometheus/node-exporter:latest container_name: node_exporter command: --path.rootfs=/host pid: host ports: - &amp;#34;9100:9100&amp;#34; volumes: - /:/host:ro,rslave restart: unless-stopped amelyet a grafana-stack docker-compose.yml fájlba vettem fel, hogy egy docker network-on legyen a stack többi részével.</description>
+ node_exporter:  image: quay.io/prometheus/node-exporter:latest  container_name: node_exporter  command: --path.rootfs=/host  pid: host  ports:  - &amp;#34;9100:9100&amp;#34;  volumes:  - /:/host:ro,rslave  restart: unless-stopped amelyet a grafana-stack docker-compose.</description>
     </item>
     
     <item>
@@ -258,8 +304,8 @@ Docker telepítése Követve a hivatalos dokumentációt Raspbian esetén a conv
       <description>Debian alapú rendszerek esetén az unattended-upgrades csomag biztosít lehetőséget update-ek automatikus futtatására.
 Telepítés sudo apt-get install unattended-upgrades apt-listchanges -y Beállítások Az unattended-upgrades beállításait az /etc/apt/apt.conf.d/50unattended-upgrades fájl tartalmazza.
 Lehetőségünk van beállítani az automatikus újraindítást, ha az update után az szükséges:
-Unattended-Upgrade::Automatic-Reboot &amp;quot;true&amp;quot;; Unattended-Upgrade::Automatic-Reboot-Time &amp;quot;03:00&amp;quot;; Továbbá lehetőségünk van e-mail értesítést is küldeni az alábbi két sorral:
-Unattended-Upgrade::Mail &amp;quot;user@example.com&amp;quot;; Unattended-Upgrade::MailReport &amp;quot;on-change&amp;quot;; De ez csak akkor fog működni, ha a rendszer tud e-mail-t küldeni, ehhez pedig egy olyan tool-ra van szükségünk, ami a mailx package-t támogatja.</description>
+Unattended-Upgrade::Automatic-Reboot &amp;#34;true&amp;#34;; Unattended-Upgrade::Automatic-Reboot-Time &amp;#34;03:00&amp;#34;; Továbbá lehetőségünk van e-mail értesítést is küldeni az alábbi két sorral:
+Unattended-Upgrade::Mail &amp;#34;user@example.com&amp;#34;; Unattended-Upgrade::MailReport &amp;#34;on-change&amp;#34;; De ez csak akkor fog működni, ha a rendszer tud e-mail-t küldeni, ehhez pedig egy olyan tool-ra van szükségünk, ami a mailx package-t támogatja.</description>
     </item>
     
     <item>
@@ -292,7 +338,7 @@ Rendelkezésre állnak előre definiált környezeti változók, amelyekkel fino
       
       <guid>https://thomastrinn.github.io/blog/posts/elasticsearch-in-docker/</guid>
       <description>Az alábbi docker-compose.yml fájl egy elasticsearch és egy elastickibana service-t indít el.
-version: &amp;#39;3&amp;#39; services: elasticsearch: image: docker.elastic.co/elasticsearch/elasticsearch:7.9.3 container_name: ebla_elasticsearch environment: - xpack.security.enabled=false - discovery.type=single-node ulimits: memlock: soft: -1 hard: -1 nofile: soft: 65536 hard: 65536 cap_add: - IPC_LOCK volumes: - elasticsearch_data:/usr/share/elasticsearch/data ports: - 9200:9200 - 9300:9300 kibana: image: docker.elastic.co/kibana/kibana:7.9.3 container_name: ebla_kibana environment: - ELASTICSEARCH_HOSTS=http://elasticsearch:9200 ports: - 5601:5601 depends_on: - elasticsearch volumes: elasticsearch_data: driver: local Ezen beállítások development környezetre ajánlatosak, production esetén ez kerülendő.</description>
+version: &amp;#39;3&amp;#39;  services:  elasticsearch:  image: docker.elastic.co/elasticsearch/elasticsearch:7.9.3  container_name: ebla_elasticsearch  environment:  - xpack.security.enabled=false  - discovery.type=single-node  ulimits:  memlock:  soft: -1  hard: -1  nofile:  soft: 65536  hard: 65536  cap_add:  - IPC_LOCK  volumes:  - elasticsearch_data:/usr/share/elasticsearch/data  ports:  - 9200:9200  - 9300:9300   kibana:  image: docker.</description>
     </item>
     
     <item>
@@ -303,7 +349,7 @@ version: &amp;#39;3&amp;#39; services: elasticsearch: image: docker.elastic.co/e
       <guid>https://thomastrinn.github.io/blog/posts/sonarqube-in-docker/</guid>
       <description>A SonarQube egy kód minőség elemző eszköz.
 SonarQube futtatása docker-compose service-ként docker-compose.yml:
-version: &amp;#34;3&amp;#34; services: sonarqube: image: sonarqube:8.9-community container_name: sonarqube depends_on: - db ulimits: memlock: soft: -1 hard: -1 nofile: soft: 65536 hard: 65536 environment: SONAR_JDBC_URL: jdbc:postgresql://db:5432/sonar SONAR_JDBC_USERNAME: sonar SONAR_JDBC_PASSWORD: sonar volumes: - sonarqube_data:/opt/sonarqube/data - sonarqube_extensions:/opt/sonarqube/extensions - sonarqube_logs:/opt/sonarqube/logs ports: - &amp;#34;9010:9000&amp;#34; db: image: postgres:12 container_name: sonarqube-postgres environment: POSTGRES_USER: sonar POSTGRES_PASSWORD: sonar ports: - 14432:5432 volumes: - postgresql:/var/lib/postgresql - postgresql_data:/var/lib/postgresql/data volumes: sonarqube_data: sonarqube_extensions: sonarqube_logs: postgresql: postgresql_data: SonarQube indítása: docker-compose up -d</description>
+version: &amp;#34;3&amp;#34;  services:  sonarqube:  image: sonarqube:8.9-community  container_name: sonarqube  depends_on:  - db  ulimits:  memlock:  soft: -1  hard: -1  nofile:  soft: 65536  hard: 65536  environment:  SONAR_JDBC_URL: jdbc:postgresql://db:5432/sonar  SONAR_JDBC_USERNAME: sonar  SONAR_JDBC_PASSWORD: sonar  volumes:  - sonarqube_data:/opt/sonarqube/data  - sonarqube_extensions:/opt/sonarqube/extensions  - sonarqube_logs:/opt/sonarqube/logs  ports:  - &amp;#34;9010:9000&amp;#34;  db:  image: postgres:12  container_name: sonarqube-postgres  environment:  POSTGRES_USER: sonar  POSTGRES_PASSWORD: sonar  ports:  - 14432:5432  volumes:  - postgresql:/var/lib/postgresql  - postgresql_data:/var/lib/postgresql/data  volumes:  sonarqube_data:  sonarqube_extensions:  sonarqube_logs:  postgresql:  postgresql_data: SonarQube indítása: docker-compose up -d</description>
     </item>
     
     <item>
