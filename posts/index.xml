@@ -48,8 +48,8 @@ Adott fájlrendszer csatolásának módja a mount paranccsal:</description>
       <pubDate>Thu, 21 Apr 2022 11:29:03 +0200</pubDate>
       
       <guid>https://thomastrinn.github.io/blog/posts/simplify-remote-access-with-custom-ssh-connection-configs/</guid>
-      <description>A korábbi SSH túl sok autentikációs próbák hiba bejegyzést követően tudomást szereztem, arról, hogy egy kapcsolódáshoz tartozó speciális beállításokat egy config fájlban is meg lehet adni, ami nagyban megkönnyíti a dolgomat, mert nem kell megjegyeznem a beállításokat.
-OpenSSH client-side configuration file: ~/.ssh/config Alap esetben az SSH config fájl nem feltétlenül létezik, ezért létre kell hozni, úgy hogy csak az adott felhasználó írhassa és olvashassa:
+      <description>A korábbi SSH túl sok autentikációs próbák hiba bejegyzést követően tudomást szereztem arról, hogy egy kapcsolódáshoz tartozó speciális beállításokat egy config fájlban is meg lehet adni, ami nagyban megkönnyíti a dolgomat, mert nem kell megjegyeznem a beállításokat.
+OpenSSH client-side configuration file: ~/.ssh/config Alap esetben az SSH config fájl nem feltétlenül létezik, ezért létre kell hozni úgy, hogy csak az adott felhasználó írhassa és olvashassa:
 touch ~/.ssh/config &amp;amp;&amp;amp; chmod 600 ~/.ssh/config A fájl struktúrája:</description>
     </item>
     
