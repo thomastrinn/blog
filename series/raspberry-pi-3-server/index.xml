@@ -14,7 +14,7 @@
       
       <guid>https://thomastrinn.github.io/blog/posts/using-zram-with-raspberry-pi/</guid>
       <description>A Raspberry Pi 3B+ 1 GiB memóriája előfordul, hogy kevésnek bizonyul, illetve a swap használata az SD kártyán lassúvá teheti a rendszerünket. Ennek orvoslásaként használható a zram.
-Mi is az a zram?  zram, formerly called compcache, is a Linux kernel module for creating a compressed block device in RAM, i.e. a RAM disk with on-the-fly disk compression. The block device created with zram can then be used for swap or as general-purpose RAM disk.</description>
+Mi is az a zram? zram, formerly called compcache, is a Linux kernel module for creating a compressed block device in RAM, i.e. a RAM disk with on-the-fly disk compression. The block device created with zram can then be used for swap or as general-purpose RAM disk.</description>
     </item>
     
     <item>
@@ -38,7 +38,7 @@ Ahhoz, hogy a riasztásról értesülhessek a Gotify message server-t használta
 Docker container logok gyűjtése A container logok helye: /var/lib/docker/&amp;lt;container-id&amp;gt;/&amp;lt;container-id&amp;gt;-json.log
 Ahol a &amp;lt;container-id&amp;gt; a docker container-ek egyedi azonosítója.
 A docker container logok gyűjtéséhez a Promtail service számára a /var/lib/docker könyvtárat kell volume-ként becsatolni:
- promtail:  image: grafana/promtail:latest  container_name: promtail  command: -config.file=/etc/promtail/config.yml  volumes:  - ./promtail/promtail-config.yml:/etc/promtail/config.yml  - /var/log:/var/log:ro  - /var/lib/docker/:/var/lib/docker:ro  restart: unless-stopped Így a promtail container eléri a host docker log-jait és most már be tudjuk állítani, hogy a promtail a /var/lib/docker/containers/*/*log fájlokat figyelve a logokat elküldje a Loki-nak.</description>
+promtail: image: grafana/promtail:latest container_name: promtail command: -config.file=/etc/promtail/config.yml volumes: - ./promtail/promtail-config.yml:/etc/promtail/config.yml - /var/log:/var/log:ro - /var/lib/docker/:/var/lib/docker:ro restart: unless-stopped Így a promtail container eléri a host docker log-jait és most már be tudjuk állítani, hogy a promtail a /var/lib/docker/containers/*/*log fájlokat figyelve a logokat elküldje a Loki-nak.</description>
     </item>
     
     <item>
@@ -49,7 +49,7 @@ A docker container logok gyűjtéséhez a Promtail service számára a /var/lib/
       <guid>https://thomastrinn.github.io/blog/posts/pi3-server-part-08-server-monitoring-part-04-system-logs/</guid>
       <description>A Server Monitoring sorozat folytatásaként most a linux host system log gyűjtésével és megjelenítésével foglalkozom.
 System log gyűjtése A system log gyűjtéséhez a Promtail service számára a linux host /var/log könyvtárát kell volume-ként becsatolni. Az eredeti docker-compose promtail service ezzel kiegészítve az alábbi:
- promtail:  image: grafana/promtail:latest  container_name: promtail  command: -config.file=/etc/promtail/config.yml  volumes:  - ./promtail/promtail-config.yml:/etc/promtail/config.yml  - /var/log:/var/log:ro  restart: unless-stopped Így a promtail container eléri a host system log-jait és most már be tudjuk állítani, hogy a promtail a /var/log könyvtárat figyelve a logokat elküldje a Loki-nak.</description>
+promtail: image: grafana/promtail:latest container_name: promtail command: -config.file=/etc/promtail/config.yml volumes: - ./promtail/promtail-config.yml:/etc/promtail/config.yml - /var/log:/var/log:ro restart: unless-stopped Így a promtail container eléri a host system log-jait és most már be tudjuk állítani, hogy a promtail a /var/log könyvtárat figyelve a logokat elküldje a Loki-nak.</description>
     </item>
     
     <item>
@@ -61,7 +61,7 @@ System log gyűjtése A system log gyűjtéséhez a Promtail service számára a
       <description>A Server Monitoring sorozat folytatásaként most a futó docker containerek erőforrás igényeit szeretném kinyerni és megjeleníteni.
 Docker daemon Van lehetőség közvetlenül a docker daemon-ból kinyerni metric adatokat, a hivatalos docker dokumentációban találtam leírást hozzá. Jelenleg még fejlesztés alatt van, így csak experimental módban lehet használni.
 A /etc/docker/daemon.json fájlban adható meg a metric végpont engedélyezése:
-{  &amp;#34;metrics-addr&amp;#34; : &amp;#34;127.0.0.1:9323&amp;#34;,  &amp;#34;experimental&amp;#34; : true } Ahhoz, hogy érvényesüljön a beállítás újra kell indítani a docker daemon-t:</description>
+{ &amp;#34;metrics-addr&amp;#34; : &amp;#34;127.0.0.1:9323&amp;#34;, &amp;#34;experimental&amp;#34; : true } Ahhoz, hogy érvényesüljön a beállítás újra kell indítani a docker daemon-t:</description>
     </item>
     
     <item>
@@ -73,7 +73,7 @@ A /etc/docker/daemon.json fájlban adható meg a metric végpont engedélyezése
       <description>A Server Monitoring sorozat folytatásaként most a hardware és os metric adatok gyűjtésével és megjelenítésével foglalkozom.
 System metric adatok elérése A Prometheus egyik hivatalos metric exporter-je a Node exporter , amely pont megfelel céljaim számára.
 A node exporter futtatható docker container-ként és docker-compose service-ként az alábbi módon hoztam létre:
- node_exporter:  image: quay.io/prometheus/node-exporter:latest  container_name: node_exporter  command: --path.rootfs=/host  pid: host  ports:  - &amp;#34;9100:9100&amp;#34;  volumes:  - /:/host:ro,rslave  restart: unless-stopped amelyet a grafana-stack docker-compose.</description>
+node_exporter: image: quay.io/prometheus/node-exporter:latest container_name: node_exporter command: --path.rootfs=/host pid: host ports: - &amp;#34;9100:9100&amp;#34; volumes: - /:/host:ro,rslave restart: unless-stopped amelyet a grafana-stack docker-compose.yml fájlba vettem fel, hogy egy docker network-on legyen a stack többi részével.</description>
     </item>
     
     <item>
@@ -85,7 +85,7 @@ A node exporter futtatható docker container-ként és docker-compose service-k�
       <description>A Raspberry Pi server monitorozását a Grafana Labs eszközeivel kívánom megoldani.
 A célom a rendszer és a docker container-ek monitorozása, az adatok megjelenítése grafikonokon - úgynevezett dashboard-on -, a rendszer és docker container logok egységes kezelése, riasztások küldése nem kívánt állapotok esetén.
 A Grafana Labs főbb eszközei:
- Grafana: metric adat vizualizáló, kereső és riszasztás kezelő rendszer Prometheus: metric adatokat gyűjtő és tároló rendszer Loki: log aggregáló rendszer Promtail: agent, amely logokat továbbít Loki-nak.</description>
+Grafana: metric adat vizualizáló, kereső és riszasztás kezelő rendszer Prometheus: metric adatokat gyűjtő és tároló rendszer Loki: log aggregáló rendszer Promtail: agent, amely logokat továbbít Loki-nak.</description>
     </item>
     
     <item>

@@ -25,8 +25,9 @@ Néhány hónap elteltével azonban elkezdett motoszkálni a fejemben, hogy neke
       <guid>https://thomastrinn.github.io/blog/posts/swap/</guid>
       <description>Szükség van-e swap-ra? Erre a kérdésre kerestem a választ és találtam egy jó cikket, amely ezt a témát járja körbe: Linux Performance: Why You Should Almost Always Add Swap Space
 Az alábbiakban leírom, hogyan tudunk swap fájlt létrehozni és milyen finomhangolási lehetőségeink vannak.
-Swap fájl létrehozása és használata   Swapfájl létrehozása. Például 512 mb-os swapfájl létrehozása:
-sudo dd if=/dev/zero of=/swapfile bs=1M count=512 status=progress A dd a coreutils GNU csomag része.</description>
+Swap fájl létrehozása és használata Swapfájl létrehozása. Például 512 mb-os swapfájl létrehozása:
+sudo dd if=/dev/zero of=/swapfile bs=1M count=512 status=progress A dd a coreutils GNU csomag része.
+Megfelelő jogosultságokat kell adnunk a fájlnak.</description>
     </item>
     
     <item>
@@ -73,7 +74,7 @@ ssh username@&amp;lt;server&amp;gt; Megnéztem a -v és -vvv kapcsolók segíts�
       <description>A Diun - Docker Image Update Notifier, ahogy neve is sugallja, értesít bennünk arról, ha van újabb verziójú docker image.
 Telepítés docker image-gel A diun-t úgy állítottam be, hogy minden használatban lévő docker image-emet figyelje és 6 óránként ellenőrizze, hogy vannak-e újabb verziójúak. Értesítés küldésre egy saját script-et írtam, ami a Simplepush-on keresztül küld értesítést az okos telefonomra.
 Az docker-compose.yml fájl a diun service-szel:
-version: &amp;#34;3.8&amp;#34;  services:  diun:  image: crazymax/diun:latest  container_name: diun  restart: always  command: serve  volumes:  - &amp;#34;.</description>
+version: &amp;#34;3.8&amp;#34; services: diun: image: crazymax/diun:latest container_name: diun restart: always command: serve volumes: - &amp;#34;.</description>
     </item>
     
     <item>
@@ -98,10 +99,11 @@ A szolgáltatás mellet ingyenesen android és ios alkalmazást is adnak.
       <description>A Samba segítségével fájl megosztást lehet lehetővé tenni Linux, Windows és MacOS operációs rendszerek számára.
 Meglepetésemre a telepítés és beállítás sokkal egyszerűbb volt, mint gondoltam.
 Az ubuntu oldalán található két leírás nagy segítséget adott:
-  Tutorial: Install and Configure Samba
-  Server - Docs: File Server
-  Nincs más teendő, mint telepíteni a samba csomagot:
-sudo apt install samba A beállításokat pedig az /etc/samba/smb.conf fájlban tehetjük meg.</description>
+Tutorial: Install and Configure Samba
+Server - Docs: File Server
+Nincs más teendő, mint telepíteni a samba csomagot:
+sudo apt install samba A beállításokat pedig az /etc/samba/smb.conf fájlban tehetjük meg.
+A fájl alapértelmezett értékeit meghagytam, csupán a fájl végére felvettem a megosztásra szánt könyvtár beállításait:</description>
     </item>
     
     <item>
@@ -112,9 +114,9 @@ sudo apt install samba A beállításokat pedig az /etc/samba/smb.conf fájlban 
       <guid>https://thomastrinn.github.io/blog/posts/home-lab-server-setup/</guid>
       <description>A home lab server operációs rendszerének némi kutakodás után az ubuntu server-t választottam, mivel linux szerverek esetén túlnyomórészt ezt használják.
 A kutakodás során az alábbiakat derítettem ki:
-  A debian a legstabilabb és legbiztonságosabb, de hátránya hogy mindig elavult alkalmazásokat támogat, az előbbiek érdekében.
-  Az ubuntu (debian alapú) a legnépszerűbb és legelterjedtebben használt, biztonságos és stabil, meghatározott release ciklussal és support-tal.
-  Az arch linux nem igen kerül elő mint server operációs rendszer, de vannak vállalkozó szellemű cégek.</description>
+A debian a legstabilabb és legbiztonságosabb, de hátránya hogy mindig elavult alkalmazásokat támogat, az előbbiek érdekében.
+Az ubuntu (debian alapú) a legnépszerűbb és legelterjedtebben használt, biztonságos és stabil, meghatározott release ciklussal és support-tal.
+Az arch linux nem igen kerül elő mint server operációs rendszer, de vannak vállalkozó szellemű cégek.</description>
     </item>
     
     <item>
@@ -125,13 +127,14 @@ A kutakodás során az alábbiakat derítettem ki:
       <guid>https://thomastrinn.github.io/blog/posts/first-mini-home-lab-server-metal/</guid>
       <description>Hosszas fontolgatás után úgy döntöttem eljött az ideje a Raspberry Pi mini számítógép kalandozásaim után, hogy egy erősebb hardware-t keressek, amit Home Lab Server-nek használhatok.
 Elvárások:
-  Kicsi, kompakt számítógép ház
-  Csendes
-  M.2 NVMe SSD támogatás
-  2,5&amp;rsquo;&amp;rsquo;&amp;rsquo; HDD elférjen a számítógép házban
-  Több magos CPU
-  Jó teljesítmény, alacsony fogyasztás
-  Egy hosszas kutakodást követően a Minisforum UM340 Mini PC-re esett a választásom.</description>
+Kicsi, kompakt számítógép ház
+Csendes
+M.2 NVMe SSD támogatás
+2,5&amp;rsquo;&amp;rsquo;&amp;rsquo; HDD elférjen a számítógép házban
+Több magos CPU
+Jó teljesítmény, alacsony fogyasztás
+Egy hosszas kutakodást követően a Minisforum UM340 Mini PC-re esett a választásom.
+Nagy előnye, hogy barebone változatban is elérhető volt, így a memóriát, SSD-t és HDD-t magam választhattam meg.</description>
     </item>
     
     <item>
@@ -141,7 +144,7 @@ Elvárások:
       
       <guid>https://thomastrinn.github.io/blog/posts/magic-wormhole-secure-file-transfer/</guid>
       <description>The notion of a “magic wormhole” comes from the image of two distant wizards speaking the same enchanted phrase at the same time, and causing a mystical connection to pop into existence between them. The wizards then throw books into the wormhole and they fall out the other side. Transferring files securely should be that easy. &amp;ndash; magic-worhole official website
- A wormhole lehetővé teszi tetszőleges méretű fájlok és könyvtárak (vagy rövid szövegrészek) átjutását egyik számítógépről a másikra.</description>
+A wormhole lehetővé teszi tetszőleges méretű fájlok és könyvtárak (vagy rövid szövegrészek) átjutását egyik számítógépről a másikra.</description>
     </item>
     
     <item>
@@ -151,7 +154,7 @@ Elvárások:
       
       <guid>https://thomastrinn.github.io/blog/posts/create-a-multi-iso-bootable-flash-drive/</guid>
       <description>A Ventoy egy open source eszköz, amely segítségével boot-olható USB drive-ot készíthetünk ISO/WIM/IMG/VHD(x)/EFI fájlok számára.
-Ventoy használata  Töltsük le vagy telepítsük a Ventoy programot. A ventoygui alkalmazás indítása után egy egyszerű felülettel találkozunk:  kiválaszthatjuk az eszközt, amelyre fel kívánjuk telepíteni megadhatjuk, hogy MBR vagy GPT partíciós stílust akarunk-e használni megadhatjuk, a ventoy partíció méretét.   A beállítások után telepíthetjük a ventoy-t, vagy ha már korábban telepítettük, akkor frissíthetjük.</description>
+Ventoy használata Töltsük le vagy telepítsük a Ventoy programot. A ventoygui alkalmazás indítása után egy egyszerű felülettel találkozunk: kiválaszthatjuk az eszközt, amelyre fel kívánjuk telepíteni megadhatjuk, hogy MBR vagy GPT partíciós stílust akarunk-e használni megadhatjuk, a ventoy partíció méretét. A beállítások után telepíthetjük a ventoy-t, vagy ha már korábban telepítettük, akkor frissíthetjük. A telepítést követően a Ventoy partícióra felmásolhatjuk a .</description>
     </item>
     
     <item>
@@ -187,7 +190,7 @@ Blog oldal létrehozása A blog oldal létrehozása a hugo programmal:</descript
       
       <guid>https://thomastrinn.github.io/blog/posts/using-zram-with-raspberry-pi/</guid>
       <description>A Raspberry Pi 3B+ 1 GiB memóriája előfordul, hogy kevésnek bizonyul, illetve a swap használata az SD kártyán lassúvá teheti a rendszerünket. Ennek orvoslásaként használható a zram.
-Mi is az a zram?  zram, formerly called compcache, is a Linux kernel module for creating a compressed block device in RAM, i.e. a RAM disk with on-the-fly disk compression. The block device created with zram can then be used for swap or as general-purpose RAM disk.</description>
+Mi is az a zram? zram, formerly called compcache, is a Linux kernel module for creating a compressed block device in RAM, i.e. a RAM disk with on-the-fly disk compression. The block device created with zram can then be used for swap or as general-purpose RAM disk.</description>
     </item>
     
     <item>
@@ -222,7 +225,7 @@ Ahhoz, hogy a riasztásról értesülhessek a Gotify message server-t használta
 Docker container logok gyűjtése A container logok helye: /var/lib/docker/&amp;lt;container-id&amp;gt;/&amp;lt;container-id&amp;gt;-json.log
 Ahol a &amp;lt;container-id&amp;gt; a docker container-ek egyedi azonosítója.
 A docker container logok gyűjtéséhez a Promtail service számára a /var/lib/docker könyvtárat kell volume-ként becsatolni:
- promtail:  image: grafana/promtail:latest  container_name: promtail  command: -config.file=/etc/promtail/config.yml  volumes:  - ./promtail/promtail-config.yml:/etc/promtail/config.yml  - /var/log:/var/log:ro  - /var/lib/docker/:/var/lib/docker:ro  restart: unless-stopped Így a promtail container eléri a host docker log-jait és most már be tudjuk állítani, hogy a promtail a /var/lib/docker/containers/*/*log fájlokat figyelve a logokat elküldje a Loki-nak.</description>
+promtail: image: grafana/promtail:latest container_name: promtail command: -config.file=/etc/promtail/config.yml volumes: - ./promtail/promtail-config.yml:/etc/promtail/config.yml - /var/log:/var/log:ro - /var/lib/docker/:/var/lib/docker:ro restart: unless-stopped Így a promtail container eléri a host docker log-jait és most már be tudjuk állítani, hogy a promtail a /var/lib/docker/containers/*/*log fájlokat figyelve a logokat elküldje a Loki-nak.</description>
     </item>
     
     <item>
@@ -233,7 +236,7 @@ A docker container logok gyűjtéséhez a Promtail service számára a /var/lib/
       <guid>https://thomastrinn.github.io/blog/posts/pi3-server-part-08-server-monitoring-part-04-system-logs/</guid>
       <description>A Server Monitoring sorozat folytatásaként most a linux host system log gyűjtésével és megjelenítésével foglalkozom.
 System log gyűjtése A system log gyűjtéséhez a Promtail service számára a linux host /var/log könyvtárát kell volume-ként becsatolni. Az eredeti docker-compose promtail service ezzel kiegészítve az alábbi:
- promtail:  image: grafana/promtail:latest  container_name: promtail  command: -config.file=/etc/promtail/config.yml  volumes:  - ./promtail/promtail-config.yml:/etc/promtail/config.yml  - /var/log:/var/log:ro  restart: unless-stopped Így a promtail container eléri a host system log-jait és most már be tudjuk állítani, hogy a promtail a /var/log könyvtárat figyelve a logokat elküldje a Loki-nak.</description>
+promtail: image: grafana/promtail:latest container_name: promtail command: -config.file=/etc/promtail/config.yml volumes: - ./promtail/promtail-config.yml:/etc/promtail/config.yml - /var/log:/var/log:ro restart: unless-stopped Így a promtail container eléri a host system log-jait és most már be tudjuk állítani, hogy a promtail a /var/log könyvtárat figyelve a logokat elküldje a Loki-nak.</description>
     </item>
     
     <item>
@@ -245,7 +248,7 @@ System log gyűjtése A system log gyűjtéséhez a Promtail service számára a
       <description>A Server Monitoring sorozat folytatásaként most a futó docker containerek erőforrás igényeit szeretném kinyerni és megjeleníteni.
 Docker daemon Van lehetőség közvetlenül a docker daemon-ból kinyerni metric adatokat, a hivatalos docker dokumentációban találtam leírást hozzá. Jelenleg még fejlesztés alatt van, így csak experimental módban lehet használni.
 A /etc/docker/daemon.json fájlban adható meg a metric végpont engedélyezése:
-{  &amp;#34;metrics-addr&amp;#34; : &amp;#34;127.0.0.1:9323&amp;#34;,  &amp;#34;experimental&amp;#34; : true } Ahhoz, hogy érvényesüljön a beállítás újra kell indítani a docker daemon-t:</description>
+{ &amp;#34;metrics-addr&amp;#34; : &amp;#34;127.0.0.1:9323&amp;#34;, &amp;#34;experimental&amp;#34; : true } Ahhoz, hogy érvényesüljön a beállítás újra kell indítani a docker daemon-t:</description>
     </item>
     
     <item>
@@ -257,7 +260,7 @@ A /etc/docker/daemon.json fájlban adható meg a metric végpont engedélyezése
       <description>A Server Monitoring sorozat folytatásaként most a hardware és os metric adatok gyűjtésével és megjelenítésével foglalkozom.
 System metric adatok elérése A Prometheus egyik hivatalos metric exporter-je a Node exporter , amely pont megfelel céljaim számára.
 A node exporter futtatható docker container-ként és docker-compose service-ként az alábbi módon hoztam létre:
- node_exporter:  image: quay.io/prometheus/node-exporter:latest  container_name: node_exporter  command: --path.rootfs=/host  pid: host  ports:  - &amp;#34;9100:9100&amp;#34;  volumes:  - /:/host:ro,rslave  restart: unless-stopped amelyet a grafana-stack docker-compose.</description>
+node_exporter: image: quay.io/prometheus/node-exporter:latest container_name: node_exporter command: --path.rootfs=/host pid: host ports: - &amp;#34;9100:9100&amp;#34; volumes: - /:/host:ro,rslave restart: unless-stopped amelyet a grafana-stack docker-compose.yml fájlba vettem fel, hogy egy docker network-on legyen a stack többi részével.</description>
     </item>
     
     <item>
@@ -269,7 +272,7 @@ A node exporter futtatható docker container-ként és docker-compose service-k�
       <description>A Raspberry Pi server monitorozását a Grafana Labs eszközeivel kívánom megoldani.
 A célom a rendszer és a docker container-ek monitorozása, az adatok megjelenítése grafikonokon - úgynevezett dashboard-on -, a rendszer és docker container logok egységes kezelése, riasztások küldése nem kívánt állapotok esetén.
 A Grafana Labs főbb eszközei:
- Grafana: metric adat vizualizáló, kereső és riszasztás kezelő rendszer Prometheus: metric adatokat gyűjtő és tároló rendszer Loki: log aggregáló rendszer Promtail: agent, amely logokat továbbít Loki-nak.</description>
+Grafana: metric adat vizualizáló, kereső és riszasztás kezelő rendszer Prometheus: metric adatokat gyűjtő és tároló rendszer Loki: log aggregáló rendszer Promtail: agent, amely logokat továbbít Loki-nak.</description>
     </item>
     
     <item>
@@ -338,7 +341,7 @@ Rendelkezésre állnak előre definiált környezeti változók, amelyekkel fino
       
       <guid>https://thomastrinn.github.io/blog/posts/elasticsearch-in-docker/</guid>
       <description>Az alábbi docker-compose.yml fájl egy elasticsearch és egy elastickibana service-t indít el.
-version: &amp;#39;3&amp;#39;  services:  elasticsearch:  image: docker.elastic.co/elasticsearch/elasticsearch:7.9.3  container_name: ebla_elasticsearch  environment:  - xpack.security.enabled=false  - discovery.type=single-node  ulimits:  memlock:  soft: -1  hard: -1  nofile:  soft: 65536  hard: 65536  cap_add:  - IPC_LOCK  volumes:  - elasticsearch_data:/usr/share/elasticsearch/data  ports:  - 9200:9200  - 9300:9300   kibana:  image: docker.</description>
+version: &amp;#39;3&amp;#39; services: elasticsearch: image: docker.elastic.co/elasticsearch/elasticsearch:7.9.3 container_name: ebla_elasticsearch environment: - xpack.security.enabled=false - discovery.type=single-node ulimits: memlock: soft: -1 hard: -1 nofile: soft: 65536 hard: 65536 cap_add: - IPC_LOCK volumes: - elasticsearch_data:/usr/share/elasticsearch/data ports: - 9200:9200 - 9300:9300 kibana: image: docker.elastic.co/kibana/kibana:7.9.3 container_name: ebla_kibana environment: - ELASTICSEARCH_HOSTS=http://elasticsearch:9200 ports: - 5601:5601 depends_on: - elasticsearch volumes: elasticsearch_data: driver: local Ezen beállítások development környezetre ajánlatosak, production esetén ez kerülendő.</description>
     </item>
     
     <item>
@@ -349,7 +352,7 @@ version: &amp;#39;3&amp;#39;  services:  elasticsearch:  image: docker.elastic.c
       <guid>https://thomastrinn.github.io/blog/posts/sonarqube-in-docker/</guid>
       <description>A SonarQube egy kód minőség elemző eszköz.
 SonarQube futtatása docker-compose service-ként docker-compose.yml:
-version: &amp;#34;3&amp;#34;  services:  sonarqube:  image: sonarqube:8.9-community  container_name: sonarqube  depends_on:  - db  ulimits:  memlock:  soft: -1  hard: -1  nofile:  soft: 65536  hard: 65536  environment:  SONAR_JDBC_URL: jdbc:postgresql://db:5432/sonar  SONAR_JDBC_USERNAME: sonar  SONAR_JDBC_PASSWORD: sonar  volumes:  - sonarqube_data:/opt/sonarqube/data  - sonarqube_extensions:/opt/sonarqube/extensions  - sonarqube_logs:/opt/sonarqube/logs  ports:  - &amp;#34;9010:9000&amp;#34;  db:  image: postgres:12  container_name: sonarqube-postgres  environment:  POSTGRES_USER: sonar  POSTGRES_PASSWORD: sonar  ports:  - 14432:5432  volumes:  - postgresql:/var/lib/postgresql  - postgresql_data:/var/lib/postgresql/data  volumes:  sonarqube_data:  sonarqube_extensions:  sonarqube_logs:  postgresql:  postgresql_data: SonarQube indítása: docker-compose up -d</description>
+version: &amp;#34;3&amp;#34; services: sonarqube: image: sonarqube:8.9-community container_name: sonarqube depends_on: - db ulimits: memlock: soft: -1 hard: -1 nofile: soft: 65536 hard: 65536 environment: SONAR_JDBC_URL: jdbc:postgresql://db:5432/sonar SONAR_JDBC_USERNAME: sonar SONAR_JDBC_PASSWORD: sonar volumes: - sonarqube_data:/opt/sonarqube/data - sonarqube_extensions:/opt/sonarqube/extensions - sonarqube_logs:/opt/sonarqube/logs ports: - &amp;#34;9010:9000&amp;#34; db: image: postgres:12 container_name: sonarqube-postgres environment: POSTGRES_USER: sonar POSTGRES_PASSWORD: sonar ports: - 14432:5432 volumes: - postgresql:/var/lib/postgresql - postgresql_data:/var/lib/postgresql/data volumes: sonarqube_data: sonarqube_extensions: sonarqube_logs: postgresql: postgresql_data: SonarQube indítása: docker-compose up -d</description>
     </item>
     
     <item>
