@@ -6,7 +6,20 @@
     <description>Recent content in Posts on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Apr 2022 09:23:22 +0200</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Aug 2022 18:32:12 +0200</lastBuildDate><atom:link href="https://thomastrinn.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alpine: upgrade to latest release</title>
+      <link>https://thomastrinn.github.io/blog/posts/alpine-upgrade-to-latest-release/</link>
+      <pubDate>Sat, 27 Aug 2022 18:32:12 +0200</pubDate>
+      
+      <guid>https://thomastrinn.github.io/blog/posts/alpine-upgrade-to-latest-release/</guid>
+      <description>Az Alpine Linux upgrade-je a legutóbbi release-re igen egyszerű folyamat, amely jól dukomentált is az alpine wiki oldalon.
+Az upgrade folyamatot annyiban egészíteném ki, hogy biztonság kedvéért az aktuális verzión frissítsük be a rendszerünket.
+Az aktuálisan használt verzió lekérése:
+cat /etc/alpine-release Új release-re upgrade előtt érdemes upgrade-elni az aktuális verziónkat:
+sudo apk -U upgrade Most, hogy előkészültünk megléphetjük, hogy az /etc/apk/repositories fájlban lecseréljük a használt repository-kban a verziószámot a kívánt új release számára, vagy akár a latest-stable kulcsszóra, hogy mindig a legutóbbi release-t használjuk.</description>
+    </item>
+    
     <item>
       <title>Home Lab Server: choose OS 2.0</title>
       <link>https://thomastrinn.github.io/blog/posts/home-lab-server-setup-2/</link>

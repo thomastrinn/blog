@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://thomastrinn.github.io/blog/</loc>
-    <lastmod>2022-04-24T09:23:22+02:00</lastmod>
+    <loc>https://thomastrinn.github.io/blog/posts/alpine-upgrade-to-latest-release/</loc>
+    <lastmod>2022-08-27T18:32:12+02:00</lastmod>
   </url><url>
-    <loc>https://thomastrinn.github.io/blog/posts/home-lab-server-setup-2/</loc>
-    <lastmod>2022-04-24T09:23:22+02:00</lastmod>
+    <loc>https://thomastrinn.github.io/blog/</loc>
+    <lastmod>2022-08-27T18:32:12+02:00</lastmod>
   </url><url>
     <loc>https://thomastrinn.github.io/blog/posts/</loc>
+    <lastmod>2022-08-27T18:32:12+02:00</lastmod>
+  </url><url>
+    <loc>https://thomastrinn.github.io/blog/posts/home-lab-server-setup-2/</loc>
     <lastmod>2022-04-24T09:23:22+02:00</lastmod>
   </url><url>
     <loc>https://thomastrinn.github.io/blog/posts/swap/</loc>
